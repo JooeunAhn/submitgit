@@ -24,5 +24,5 @@ urlpatterns = [
     url(r'^rest-auth/github/$', GitHubLogin.as_view(), name='github_login'),
     url(r'^rest-auth/registration/account-confirm-email/(?P<key>\w+)/$', confirm_email, name='account_confirm_email'),
     # health checker for AWS EB
-    url(r'^health/$', include('health_check.urls')),
+    url(r'^health$', include('health_check.urls')),
 ]
