@@ -1,19 +1,8 @@
-FROM ubuntu:precise
-FROM python:3.5
+# https://hub.docker.com/r/insanejflow/docker-django/
+# https://github.com/JooeunAhn/docker-django
+FROM mathpresso/docker-stella:python35
 
 maintainer joon
-
-RUN apt-get update
-RUN apt-get install -y build-essential git
-RUN apt-get install -y python python-dev python-setuptools
-RUN apt-get install -y nginx supervisor
-RUN easy_install pip
-
-RUN pip install uwsgi
-
-RUN apt-get install -y python-software-properties software-properties-common
-RUN apt-get update
-RUN add-apt-repository -y ppa:nginx/stable
 
 # install our code
 ADD . /code/
