@@ -1,6 +1,6 @@
 # https://hub.docker.com/r/insanejflow/docker-django/
 # https://github.com/JooeunAhn/docker-django
-FROM mathpresso/docker-django:python35
+FROM insanejflow/docker-django:python35
 
 maintainer joon
 
