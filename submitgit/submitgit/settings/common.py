@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'rest_auth.registration',
     'rest_framework',
     'rest_framework.authtoken',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -148,3 +149,16 @@ CORS_EXPOSE_HEADERS = [
     'Cursor-Prev',
     'Cursor-Next',
 ]
+
+# static and media settings using AWS S3
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+AWS_ACCESS_KEY_ID = load_credential('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = load_credential('AWS_SECRET_ACCESS_KEY')
+AWS_REGION = 'ap-northeast-2'
+AWS_STORAGE_BUCKET_NAME = 'submitgit-static'
+AWS_QUERYSTRING_AUTH = False
+AWS_S3_HOST = 's3.%s.amazonaws.com' % AWS_REGION
+AWS_S3_SECURE_URLS = False
+STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+STATIC_URL = "http://%s/" % AWS_S3_CUSTOM_DOMAIN

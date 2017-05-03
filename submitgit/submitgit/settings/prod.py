@@ -2,6 +2,8 @@ from .common import *
 
 
 DEBUG = False
+# TODO SET URLS 
+ALLOWED_HOSTS = ['*']
 
 # TODO DATABASE SETTINGS(AWS RDB)
 
