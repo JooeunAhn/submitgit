@@ -2,10 +2,21 @@ from .common import *
 
 
 DEBUG = False
-# TODO SET URLS 
+# TODO SET URLS
 ALLOWED_HOSTS = ['*']
 
-# TODO DATABASE SETTINGS(AWS RDB)
+# TODO DATABASE SETTINGS(AWS AURORA DB)
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'HOST':
+        "submitgit-dev.ctxhubej0omd.ap-northeast-2.rds.amazonaws.com",
+        "PORT": 3306,
+        "USER": "root",
+        "PASSWORD": load_credential('RDS_PASSWORD'),
+        "NAME": "submitgit",
+    }
+}
 
 # Health checker settings
 
