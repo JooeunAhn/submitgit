@@ -172,3 +172,14 @@ AWS_S3_SECURE_URLS = False
 STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 STATIC_URL = "http://%s/" % AWS_S3_CUSTOM_DOMAIN
+
+# sendgrid settings
+EMAIL_HOST = load_credential('EMAIL_HOST')
+SENDGRID_USER = load_credential('SENDGRID_USER')
+SENDGRID_EMAIL = load_credential('SENDGRID_EMAIL')
+SENDGRID_PASSWORD = load_credential('SENDGRID_PASSWORD')
+
+# django-rest-auth settings
+ACCOUNT_LOGOUT_ON_GET = True
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = "mandatory"
