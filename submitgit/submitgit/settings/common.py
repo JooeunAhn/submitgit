@@ -182,8 +182,9 @@ EMAIL_HOST_PASSWORD = load_credential('SENDGRID_PASSWORD')
 EMAIL_MAIN = load_credential('SENDGRID_EMAIL')
 
 # django-rest-auth settings
+ACCOUNT_ADAPTER = 'accounts.adapters.HanyangEmailAdapter'
 ACCOUNT_CONFIRM_EMAIL_ON_GET = True
 ACCOUNT_LOGOUT_ON_GET = True
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = "mandatory"
-LOGIN_REDIRECT_URL="/"
+LOGIN_REDIRECT_URL = "/"
