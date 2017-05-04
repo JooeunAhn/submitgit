@@ -39,3 +39,10 @@ if load_credential("SERVER_SOFTWARE").startswith('ElasticBeanstalk'):
     except:
         raise ImproperlyConfigured(
             "You have to be running on AWS to use AWS settings")
+
+# Sentry settings
+INSTALLED_APPS += ['raven.contrib.django.raven_compat']
+
+RAVEN_CONFIG = {
+    'dsn': load_credential('SENTRY_DSN'),
+}
