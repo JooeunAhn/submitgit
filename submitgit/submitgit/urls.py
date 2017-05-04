@@ -15,13 +15,22 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+
 from allauth.account.views import confirm_email
-from accounts.views import GitHubLogin
+from rest_framework import routers
+
+from accounts.views import GitHubLogin, ProfileViewSet
+
+
+router = routers.SimpleRouter()
+router.register(r'profile', ProfileViewSet)
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^accounts/', include('allauth.account.urls')),
-    url(r'^rest-auth/github/$', GitHubLogin.as_view(), name='github_login'),
+    url(r'^api/v1/', include(router.urls)),
+    url(r'^api/v1/rest-auth/github/$', GitHubLogin.as_view(), name='github_login'),
     url(r'^rest-auth/registration/account-confirm-email/(?P<key>\w+)/$', confirm_email, name='account_confirm_email'),
     # health checker for AWS EB
     url(r'^health$', include('health_check.urls')),
