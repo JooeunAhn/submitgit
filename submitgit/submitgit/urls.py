@@ -19,7 +19,7 @@ from django.contrib import admin
 from allauth.account.views import confirm_email
 from rest_framework import routers
 
-from accounts.views import GitHubLogin, ProfileViewSet
+from accounts.views import ProfileViewSet
 
 
 router = routers.SimpleRouter()
@@ -31,9 +31,8 @@ urlpatterns = [
     url(r'^accounts/', include('allauth.account.urls')),
     url(r'^api/v1/', include(router.urls)),
     url(r'^api/v1/rest-auth/', include('rest_auth.urls')),
+    url(r'^api/v1/rest-auth/registration/account-confirm-email/(?P<key>[-:\w]+)/$', confirm_email, name='account_confirm_email'),
     url(r'^api/v1/rest-auth/registration/', include('rest_auth.registration.urls')),
-    #url(r'^api/v1/rest-auth/github/$', GitHubLogin.as_view(), name='github_login'),
-    url(r'^rest-auth/registration/account-confirm-email/(?P<key>\w+)/$', confirm_email, name='account_confirm_email'),
     # health checker for AWS EB
     url(r'^health$', include('health_check.urls')),
 ]
