@@ -175,11 +175,15 @@ STATIC_URL = "http://%s/" % AWS_S3_CUSTOM_DOMAIN
 
 # sendgrid settings
 EMAIL_HOST = load_credential('EMAIL_HOST')
-SENDGRID_USER = load_credential('SENDGRID_USER')
-SENDGRID_EMAIL = load_credential('SENDGRID_EMAIL')
-SENDGRID_PASSWORD = load_credential('SENDGRID_PASSWORD')
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = load_credential('SENDGRID_USER')
+EMAIL_HOST_PASSWORD = load_credential('SENDGRID_PASSWORD')
+EMAIL_MAIN = load_credential('SENDGRID_EMAIL')
 
 # django-rest-auth settings
+ACCOUNT_CONFIRM_EMAIL_ON_GET = True
 ACCOUNT_LOGOUT_ON_GET = True
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = "mandatory"
+LOGIN_REDIRECT_URL="/"
