@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
-from os.path import abspath, dirname
+from os.path import abspath, dirname, join
 
 from .loader import load_credential
 
@@ -73,7 +73,7 @@ ROOT_URLCONF = 'submitgit.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [join(BASE_DIR, 'submitgit', 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -172,6 +172,7 @@ AWS_S3_SECURE_URLS = False
 STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 STATIC_URL = "http://%s/" % AWS_S3_CUSTOM_DOMAIN
+STATICFILES_DIRS = [join(BASE_DIR, 'submitgit', 'static')]
 
 # sendgrid settings
 EMAIL_HOST = load_credential('EMAIL_HOST')
@@ -188,3 +189,12 @@ ACCOUNT_LOGOUT_ON_GET = True
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = "mandatory"
 LOGIN_REDIRECT_URL = "/"
+
+
+# REST AUTHENTICATION SETTINGS
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+    )
+}
