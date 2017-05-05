@@ -198,3 +198,4 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication',
     )
 }
+OLD_PASSWORD_FIELD_ENABLED = True
