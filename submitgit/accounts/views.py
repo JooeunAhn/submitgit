@@ -43,7 +43,7 @@ class ProfileViewSet(viewsets.GenericViewSet, mixins.CreateModelMixin):
             return Response(status=status.HTTP_403_FORBIDDEN)
 
         if not hasattr(request.user, "profile"):
-            return Response(status=status.HTTP_400_BAD_REQUEST)
+            return Response({})
 
         serializer = self.get_serializer(request.user.profile)
         return Response(serializer.data)
