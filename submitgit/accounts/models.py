@@ -39,6 +39,6 @@ class Test(models.Model):
     )
     langid = models.IntegerField(choices=LANG_CHOICES)
     code = models.TextField(max_length=5000)
-    errors = models.TextField(max_length=1000)
-    output = models.TextField(max_length=5000)
+    errors = models.TextField(max_length=1000, blank=True)
+    output = models.TextField(max_length=5000, blank=True)
     time = models.FloatField()
