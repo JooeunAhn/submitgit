@@ -10,8 +10,8 @@ from rest_framework import mixins, status, viewsets
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
-from .models import Profile
-from .serializers import ProfileSerializer
+from .models import Profile, Test
+from .serializers import ProfileSerializer, TestSerializer
 
 
 @receiver(user_signed_up)
@@ -47,3 +47,10 @@ class ProfileViewSet(viewsets.GenericViewSet, mixins.CreateModelMixin):
 
         serializer = self.get_serializer(request.user.profile)
         return Response(serializer.data)
+
+
+class TestViewSet(viewsets.GenericViewSet,
+                  mixins.ListModelMixin,
+                  mixins.CreateModelMixin):
+    queryset = Test.objects.all()
+    serializer_class = TestSerializer

@@ -20,11 +20,12 @@ from django.views.generic import TemplateView
 from allauth.account.views import confirm_email
 from rest_framework import routers
 
-from accounts.views import ProfileViewSet
+from accounts.views import ProfileViewSet, TestViewSet
 
 
 router = routers.SimpleRouter()
 router.register(r'profile', ProfileViewSet)
+router.register(r'test', TestViewSet)
 
 
 urlpatterns = [
