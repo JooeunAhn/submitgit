@@ -8,7 +8,8 @@ class ProfileSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Profile
-        fields = ('user', 'is_prof', 'username', 'email')
+        fields = ('user', 'is_prof', 'username',
+                  'email', 'name', 'sid', 'github_token')
 
 
 class TestSerializer(serializers.ModelSerializer):
