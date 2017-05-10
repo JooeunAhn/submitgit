@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 
     # LOCAL APPS
     'accounts',
+    'portal',
 
     # THIRD PARTY APPS
     'allauth',
