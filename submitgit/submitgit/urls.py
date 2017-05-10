@@ -21,11 +21,15 @@ from allauth.account.views import confirm_email
 from rest_framework import routers
 
 from accounts.views import ProfileViewSet, TestViewSet
+from portal.views import CourseViewSet, RepositoryViewSet
 
 
 router = routers.SimpleRouter()
 router.register(r'profile', ProfileViewSet)
 router.register(r'test', TestViewSet)
+
+router.register('course', CourseViewSet)
+router.register('repo', RepositoryViewSet)
 
 
 urlpatterns = [

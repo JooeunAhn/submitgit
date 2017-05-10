@@ -1,7 +1,7 @@
 from .common import *
 
 
-DEBUG = False
+DEBUG = True 
 # TODO SET URLS
 ALLOWED_HOSTS = ['*']
 
