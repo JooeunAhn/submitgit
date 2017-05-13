@@ -12,6 +12,7 @@ from rest_framework.response import Response
 
 from .models import Profile, Test
 from .serializers import ProfileSerializer, TestSerializer
+from .permissions import IsOwnerOrReadOnly
 
 
 @receiver(user_signed_up)
@@ -33,10 +34,11 @@ class GitHubLogin(SocialLoginView):
     client_class = OAuth2Client
 
 
+# TODO update 구현하기 is owner
 class ProfileViewSet(viewsets.GenericViewSet, mixins.CreateModelMixin):
     queryset = Profile.objects.all()
     serializer_class = ProfileSerializer
-    permission_classes = (IsAuthenticated,)
+    permission_classes = (IsAuthenticated, IsOwnerOrReadOnly)
 
     def retrieve(self, request, pk=None):
         if pk != "me":

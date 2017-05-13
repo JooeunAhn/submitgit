@@ -1,17 +1,13 @@
-from rest_framework import viewsets, mixins, status, permissions
-from rest_framework.permissions import IsAuthenticated
+from rest_framework import viewsets, mixins, status
+from rest_framework.permissions import IsAdminUser, IsAuthenticated
 from rest_framework.response import Response
 
-from .models import Course, Repository
+from .models import Course, Repository, Assignment, Submission
 from .serializers import CourseSerializer, CourseWithoutStudentsSerializer
-from .serializers import RepositorySerializer
-
-
-class IsOwnerProfessorOrReadOnly(permissions.BasePermission):
-    def has_object_permission(self, request, view, obj):
-        if request.method in permissions.SAFE_METHODS:
-            return True
-        return obj.professor == request.user
+from .serializers import RepositorySerializer, AssignmentSerializer
+from .serializers import SubmissionSerializer
+from .permissions import IsOwnerProfessorOrReadOnly
+from .permissions import IsCourseOwnerProfessorOrReadOnly
 
 
 class CourseViewSet(viewsets.GenericViewSet,
@@ -43,7 +39,7 @@ class CourseViewSet(viewsets.GenericViewSet,
 
     def create(self, request, *args, **kwargs):
         if not request.user.profile.is_prof:
-            return Response(None, status=status.HTTP_403_FORBIDDEN)
+            return Response("Prof Only", status=status.HTTP_403_FORBIDDEN)
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         self.perform_create(serializer)
@@ -67,12 +63,13 @@ class RepositoryViewSet(viewsets.GenericViewSet,
 
     def create(self, request, *args, **kwargs):
         if request.user.profile.is_prof:
-            return Response(None, status=status.HTTP_403_FORBIDDEN)
+            return Response("Student Only", status=status.HTTP_403_FORBIDDEN)
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         if Repository.objects.filter(course=request.data['course'],
                                      student=request.user).exists():
-            return Response(None, status=status.HTTP_400_BAD_REQUEST)
+            return Response("Registraon Already Exists",
+                            status=status.HTTP_400_BAD_REQUEST)
         self.perform_create(serializer)
         headers = self.get_success_headers(serializer.data)
         return Response(serializer.data,
@@ -87,7 +84,8 @@ class RepositoryViewSet(viewsets.GenericViewSet,
         instance = self.get_object()
         if not (instance.student == request.user or
                 instance.course.professor == request.user):
-            return Response(None, status=status.HTTP_403_FORBIDDEN)
+            return Response("It is not yours",
+                            status=status.HTTP_403_FORBIDDEN)
         serializer = self.get_serializer(instance,
                                          data=request.data, partial=partial)
         serializer.is_valid(raise_exception=True)
@@ -97,7 +95,7 @@ class RepositoryViewSet(viewsets.GenericViewSet,
         return Response(serializer.data)
 
     def perform_update(self, serializer):
-        if self.requser.user.profile.is_prof:
+        if self.request.user.profile.is_prof:
             return serializer.save()
         return serializer.save(student=self.requser.user, is_verified=False)
 
@@ -105,6 +103,69 @@ class RepositoryViewSet(viewsets.GenericViewSet,
         instance = self.get_object()
         if not (instance.student == request.user or
                 instance.course.professor == request.user):
-            return Response(None, status=status.HTTP_403_FORBIDDEN)
+            return Response("It is not yours",
+                            status=status.HTTP_403_FORBIDDEN)
         self.perform_destroy(instance)
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+class AssignmentViewSet(viewsets.GenericViewSet,
+                        mixins.CreateModelMixin,
+                        mixins.UpdateModelMixin):
+    queryset = Assignment.objects.all()
+    serializer_class = AssignmentSerializer
+    permission_classes = (IsAuthenticated, IsCourseOwnerProfessorOrReadOnly)
+
+    def create(self, request, *args, **kwargs):
+        if request.user.profile.is_prof:
+            return Response("Prof Only", status=status.HTTP_403_FORBIDDEN)
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        prof = Course.objects.get(pk=request.data['course']).professor
+        if prof != request.user:
+            return Response("The course in request.data is not yours",
+                            status=status.HTTP_403_FORBIDDEN)
+        self.perform_create(serializer)
+        headers = self.get_success_headers(serializer.data)
+        return Response(serializer.data,
+                        status=status.HTTP_201_CREATED,
+                        headers=headers)
+
+    def retrieve(self, request, pk):
+        prof = Assignment.objects.get(pk=pk).course.professor
+        instance = self.get_object()
+        submission_set = instance.submission_set.filter(
+            is_last_submission=True)
+        prof = instance.course.professor
+        if request.user in instance.course.students:
+            submission_set = submission_set.filter(student=request.user)
+        elif request.user == prof:
+            pass
+        else:
+            return Response("it's not yours",
+                            status=status.HTTP_401_UNAUTHORIZED)
+
+        submission_data = SubmissionSerializer(submission_set,
+                                               many=True,)
+
+        return Response({
+            'id': instance.pk,
+            'title': instance.title,
+            'content': instance.content,
+            'attachments': instance.attachments,
+            'course': instance.course,
+            'deadline': instance.deadline,
+            'is_test': instance.is_test,
+            'test_file_name': instance.test_file_name,
+            'test_input': instance.test_input,
+            'test_output': instance.test_output,
+            'created_at': instance.created_at,
+            'updated_at': instance.updated_at,
+            'submission_set': submission_data,
+            })
+
+
+class SubmissionViewSet(viewsets.ModelViewSet):
+    queryset = Submission.objects.all()
+    serializer_class = SubmissionSerializer
+    permission_classes = (IsAdminUser,)

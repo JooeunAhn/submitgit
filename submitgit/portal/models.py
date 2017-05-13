@@ -78,8 +78,7 @@ class Assignment(models.Model):
 
 def update_filename(instance, filename):
     import os
-    path = "uploads/test_history/%Y/%m/%d/%s/" % \
-        (instance.assignment.id,)
+    path = "uploads/test_history/%Y/%m/%d/" + str(instance.assignment.id) + "/"
     filename = instance.student.profile.sid + "-" + filename
     return os.path.join(path, filename)
 
@@ -108,7 +107,8 @@ class Submission(models.Model):
     assignment = models.ForeignKey(Assignment,
                                    on_delete=models.CASCADE)
     is_passed = models.BooleanField(default=False)
-    has_error = models.BooleanField(default=True)
+    is_last_submission = models.BooleanField(default=True)
+    has_error = models.BooleanField(default=False)
     raw_code = models.FileField(upload_to=update_filename)
     code = models.TextField(max_length=5000)
     langid = models.IntegerField(choices=LANG_CHOICES)
@@ -120,3 +120,11 @@ class Submission(models.Model):
 
     def __str__(self):
         return "%s %s" % (self.id, self.submission)
+
+    def save(self, *args, **kwargs):
+        Submission.objects.filter(student=self.student) \
+            .update(is_last_submission=False)
+        super(Submission, self).save(*args, **kwargs)
+
+
+

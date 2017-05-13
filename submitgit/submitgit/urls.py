@@ -21,7 +21,8 @@ from allauth.account.views import confirm_email
 from rest_framework import routers
 
 from accounts.views import ProfileViewSet, TestViewSet
-from portal.views import CourseViewSet, RepositoryViewSet
+from portal.views import CourseViewSet, RepositoryViewSet, AssignmentViewSet
+from portal.views import SubmissionViewSet
 
 
 router = routers.SimpleRouter()
@@ -30,6 +31,8 @@ router.register(r'test', TestViewSet)
 
 router.register('course', CourseViewSet)
 router.register('repo', RepositoryViewSet)
+router.register('assignment', AssignmentViewSet)
+router.register('submission', SubmissionViewSet)
 
 
 urlpatterns = [
