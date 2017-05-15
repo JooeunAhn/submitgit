@@ -1,4 +1,5 @@
 from rest_framework import viewsets, mixins, status
+from rest_framework.decorators import list_route
 from rest_framework.permissions import IsAdminUser, IsAuthenticated
 from rest_framework.response import Response
 
@@ -60,6 +61,14 @@ class RepositoryViewSet(viewsets.GenericViewSet,
     queryset = Repository.objects.all()
     serializer_class = RepositorySerializer
     permission_classes = (IsAuthenticated,)
+
+    @list_route(methods=['get'])
+    def course(self, request):
+        course_id = request.query_params.get('course_id')
+        course = Course.objects.get(pk=course_id)
+        repo = Repository.objects.get(course=course, student=request.user)
+        serializer = self.get_serializer(repo)
+        return Response(serializer.data)
 
     def create(self, request, *args, **kwargs):
         if request.user.profile.is_prof:
