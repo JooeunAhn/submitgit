@@ -146,23 +146,22 @@ class AssignmentViewSet(viewsets.GenericViewSet,
         submission_set = instance.submission_set.filter(
             is_last_submission=True)
         prof = instance.course.professor
-        if request.user in instance.course.students:
-            submission_set = submission_set.filter(student=request.user)
+        if request.user in instance.course.students.all():
+            submission_set = submission_set.filter(student=request.user) \
+                .distinct()
         elif request.user == prof:
             pass
         else:
             return Response("it's not yours",
                             status=status.HTTP_401_UNAUTHORIZED)
-
         submission_data = SubmissionSerializer(submission_set,
-                                               many=True,)
-
+                                               many=True).data
         return Response({
             'id': instance.pk,
             'title': instance.title,
             'content': instance.content,
-            'attachments': instance.attachments,
-            'course': instance.course,
+            'attachments': instance.attachments.url,
+            'course': instance.course.id,
             'deadline': instance.deadline,
             'is_test': instance.is_test,
             'test_file_name': instance.test_file_name,

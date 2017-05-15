@@ -125,6 +125,3 @@ class Submission(models.Model):
         Submission.objects.filter(student=self.student) \
             .update(is_last_submission=False)
         super(Submission, self).save(*args, **kwargs)
-
-
-
