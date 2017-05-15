@@ -35,7 +35,9 @@ class GitHubLogin(SocialLoginView):
 
 
 # TODO update 구현하기 is owner
-class ProfileViewSet(viewsets.GenericViewSet, mixins.CreateModelMixin):
+class ProfileViewSet(viewsets.GenericViewSet,
+                     mixins.UpdateModelMixin,
+                     mixins.CreateModelMixin):
     queryset = Profile.objects.all()
     serializer_class = ProfileSerializer
     permission_classes = (IsAuthenticated, IsOwnerOrReadOnly)
@@ -48,6 +50,22 @@ class ProfileViewSet(viewsets.GenericViewSet, mixins.CreateModelMixin):
             return Response({})
 
         serializer = self.get_serializer(request.user.profile)
+        return Response(serializer.data)
+
+    def update(self, request, pk=None, *args, **kwargs):
+        if pk != "me":
+            return Response(status=status.HTTP_403_FORBIDDEN)
+        partial = kwargs.pop('partial', False)
+        instance = Profile.objects.get(user=request.user)
+        serializer = self.get_serializer(instance,
+                                         data=request.data,
+                                         partial=partial)
+        serializer.is_valid(raise_exception=True)
+        self.perform_update(serializer)
+
+        if getattr(instance, '_prefetched_objects_cache', None):
+            instance._prefetched_objects_cache = {}
+
         return Response(serializer.data)
 
 
