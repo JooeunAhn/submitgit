@@ -49,12 +49,13 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'allauth.socialaccount.providers.github',
+    # 'allauth.socialaccount.providers.github',
     'corsheaders',
     'rest_auth',
     'rest_auth.registration',
     'rest_framework',
     'rest_framework.authtoken',
+    'rest_framework_swagger',
     'storages',
 ]
 

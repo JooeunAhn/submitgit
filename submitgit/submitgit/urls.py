@@ -19,11 +19,13 @@ from django.views.generic import TemplateView
 
 from allauth.account.views import confirm_email
 from rest_framework import routers
+from rest_framework_swagger.views import get_swagger_view
 
 from accounts.views import ProfileViewSet, TestViewSet
 from portal.views import CourseViewSet, RepositoryViewSet, AssignmentViewSet
 from portal.views import SubmissionViewSet
 
+schema_view = get_swagger_view(title="submitgit API")
 
 router = routers.SimpleRouter()
 router.register(r'profile', ProfileViewSet)
@@ -36,6 +38,7 @@ router.register('submission', SubmissionViewSet)
 
 
 urlpatterns = [
+    url(r'^schema$', schema_view),
     url(r'^$', TemplateView.as_view(template_name="angular/index.html"), name="index"),
     url(r'^admin/', admin.site.urls),
     url(r'^accounts/', include('allauth.account.urls')),
