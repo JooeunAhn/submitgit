@@ -120,6 +120,7 @@ class RepositoryViewSet(viewsets.GenericViewSet,
 
 class AssignmentViewSet(viewsets.GenericViewSet,
                         mixins.CreateModelMixin,
+                        mixins.DestroyModelMixin,
                         mixins.UpdateModelMixin):
     queryset = Assignment.objects.all()
     serializer_class = AssignmentSerializer
