@@ -107,14 +107,15 @@ class Submission(models.Model):
     assignment = models.ForeignKey(Assignment,
                                    on_delete=models.CASCADE)
     is_passed = models.BooleanField(default=False)
+    is_working = models.BooleanField(default=True)
     is_last_submission = models.BooleanField(default=True)
     has_error = models.BooleanField(default=False)
     raw_code = models.FileField(upload_to=update_filename)
-    code = models.TextField(max_length=5000)
-    langid = models.IntegerField(choices=LANG_CHOICES)
+    code = models.TextField(max_length=5000, blank=True)
+    langid = models.IntegerField(choices=LANG_CHOICES, null=True, blank=True)
     errors = models.TextField(max_length=5000, blank=True)
     output = models.TextField(max_length=5000, blank=True)
-    time = models.FloatField()
+    time = models.FloatField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
