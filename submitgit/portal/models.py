@@ -63,6 +63,7 @@ class Assignment(models.Model):
                                    upload_to="uploads/assignment/%Y/%m/%d/")
     deadline = models.DateTimeField()
     is_test = models.BooleanField(default=False)
+    test_time = models.FloatField(default=2)
     test_file_name = models.CharField(max_length=100)
     test_input = models.TextField(max_length=5000, blank=True)
     test_output = models.TextField(max_length=5000, blank=True)
