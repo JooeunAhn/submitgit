@@ -36,7 +36,7 @@ class RepositorySerializer(serializers.ModelSerializer):
 class SubmissionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Submission
-        fields = ("student", "assignment", "is_passed", "has_error",
+        fields = ("id", "student", "assignment", "is_passed", "has_error",
                   "raw_code", "code", "langid", "errors", "output", "time",
                   "created_at", "updated_at")
 

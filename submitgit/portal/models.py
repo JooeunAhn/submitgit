@@ -110,7 +110,7 @@ class Submission(models.Model):
     is_working = models.BooleanField(default=True)
     is_last_submission = models.BooleanField(default=True)
     has_error = models.BooleanField(default=False)
-    raw_code = models.FileField(upload_to=update_filename)
+    raw_code = models.FileField(upload_to=update_filename, blank=True)
     code = models.TextField(max_length=5000, blank=True)
     langid = models.IntegerField(choices=LANG_CHOICES, null=True, blank=True)
     errors = models.TextField(max_length=5000, blank=True)
@@ -120,7 +120,7 @@ class Submission(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return "%s %s" % (self.id, self.submission)
+        return "%s %s %s" % (self.id, self.assignment, self.student.profile)
 
     def save(self, *args, **kwargs):
         Submission.objects.filter(student=self.student) \
