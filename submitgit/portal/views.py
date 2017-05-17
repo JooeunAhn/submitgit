@@ -54,6 +54,11 @@ def manual(request, pk):
     if not repo:
         return HttpResponse("you are not registered in this course")
 
+    if Submission.objects.filter(student=request.user,
+                                 assignment=assignment,
+                                 is_working=True).exists():
+        return HttpResponse("your assignment is on grading")
+
     repo_url = [i for i in repo.url.split('/') if i != ""]
     github_repo_name = repo_url.pop()
     github_username = repo_url.pop()
@@ -63,10 +68,12 @@ def manual(request, pk):
 
     for lang in assignment.test_langids.split(','):
         lang = int(lang)
-        res = rq.get(github_url+"%s/%s/master/%s%s" % (github_username,
-                                                       github_repo_name,
-                                                       assignment.test_file_name,
-                                                       lang_extension[lang]))
+        res = rq.get(
+            github_url+"%s/%s/master/%s%s" % (github_username,
+                                              github_repo_name,
+                                              assignment.test_file_name,
+                                              lang_extension[lang])
+            )
         try:
             res.raise_for_status()
         except RequestException:
