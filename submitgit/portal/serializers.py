@@ -47,7 +47,7 @@ class AssignmentSerializer(serializers.ModelSerializer):
         model = Assignment
         fields = (
             "id", "title", "test_time", "content", "attachments", 'course',
-            "is_test", "test_file_name", "test_input", "test_output",
+            "is_test", "test_file_name",
             "test_langids", "deadline", "created_at", "updated_at")
 
 

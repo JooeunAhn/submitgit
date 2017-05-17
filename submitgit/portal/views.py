@@ -157,21 +157,26 @@ class AssignmentViewSet(viewsets.GenericViewSet,
                             status=status.HTTP_401_UNAUTHORIZED)
         submission_data = SubmissionSerializer(submission_set,
                                                many=True).data
-        return Response({
-            'id': instance.pk,
-            'title': instance.title,
-            'content': instance.content,
-            'attachments': instance.attachments.url,
-            'course': instance.course.id,
-            'deadline': instance.deadline,
-            'is_test': instance.is_test,
-            'test_file_name': instance.test_file_name,
-            'test_input': instance.test_input,
-            'test_output': instance.test_output,
-            'created_at': instance.created_at,
-            'updated_at': instance.updated_at,
-            'submission_set': submission_data,
-            })
+
+        data = {}
+
+        if request.user == prof:
+            data['test_input'] = instance.test_input
+            data['test_output'] = instance.test_output
+
+        data['id'] = instance.pk
+        data['title'] = instance.title
+        data['content'] = instance.content
+        data['attachments'] = instance.attachments.url
+        data['course'] = instance.course.pk
+        data['deadline'] = instance.deadline
+        data['is_test'] = instance.is_test
+        data['test_file_name'] = instance.test_file_name
+        data['test_langids'] = instance.test_langids
+        data['created_at'] = instance.created_at
+        data['updated_at'] = instance.updated_at
+        data['submission_set'] = submission_data
+        return Response(data)
 
 
 class SubmissionViewSet(viewsets.ModelViewSet):
