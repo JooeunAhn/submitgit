@@ -38,7 +38,7 @@ class SubmissionSerializer(serializers.ModelSerializer):
         model = Submission
         fields = ("id", "student", "assignment", "is_passed", "has_error",
                   "raw_code", "code", "langid", "errors", "output", "time",
-                  "created_at", "updated_at")
+                  "is_working", "created_at", "updated_at")
 
 
 class AssignmentSerializer(serializers.ModelSerializer):
