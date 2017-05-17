@@ -6,7 +6,7 @@ from rest_framework.response import Response
 
 from .models import Course, Repository, Assignment, Submission
 from .serializers import CourseSerializer, CourseWithoutStudentsSerializer
-from .serializers import RepositorySerializer
+from .serializers import RepositorySerializer, AssignmentSerializer
 from .serializers import SubmissionSerializer, AssignmentCreateSerializer
 from .permissions import IsOwnerProfessorOrReadOnly
 from .permissions import IsCourseOwnerProfessorOrReadOnly
@@ -32,7 +32,7 @@ class CourseViewSet(viewsets.GenericViewSet,
 
         page = self.paginate_queryset(queryset)
         if page is not None:
-            serializer = self.get_serializer(page, many=True)
+            serializer = CourseWithoutStudentsSerializer(page, many=True)
             return self.get_paginated_response(serializer.data)
 
         serializer = CourseWithoutStudentsSerializer(queryset, many=True)
@@ -185,6 +185,29 @@ class AssignmentViewSet(viewsets.GenericViewSet,
         data['updated_at'] = instance.updated_at
         data['submission_set'] = submission_data
         return Response(data)
+
+    @list_route(methods=['get'])
+    def me(self, request, *args, **kwargs):
+
+        if request.user.profile.is_prof:
+            return Response("Professors are not allowed",
+                            status=status.HTTP_401_UNAUTHORIZED)
+
+        from datetime import datetime
+        now = datetime.now()
+        repo_list = Repository.objects.filter(student=request.user,
+                                              is_verified=True)
+        course_list = Course.objects.filter(repository__in=repo_list)
+        assignment_list = Assignment.objects.filter(course__in=course_list,
+                                                    deadline__gte=now)
+
+        page = self.paginate_queryset(assignment_list)
+        if page is not None:
+            serializer = AssignmentSerializer(page, many=True)
+            return self.get_paginated_response(serializer.data)
+
+        serializer = AssignmentSerializer(assignment_list, many=True)
+        return Response(serializer.data)
 
 
 class SubmissionViewSet(viewsets.ModelViewSet):
