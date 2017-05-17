@@ -123,13 +123,13 @@ class AssignmentViewSet(viewsets.GenericViewSet,
                         mixins.DestroyModelMixin,
                         mixins.UpdateModelMixin):
     queryset = Assignment.objects.all()
-    serializer_class = AssignmentSerializer
+    serializer_class = AssignmentCreateSerializer
     permission_classes = (IsAuthenticated, IsCourseOwnerProfessorOrReadOnly)
 
     def create(self, request, *args, **kwargs):
         if request.user.profile.is_prof:
             return Response("Prof Only", status=status.HTTP_403_FORBIDDEN)
-        serializer = AssignmentCreateSerializer(data=request.data)
+        serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         prof = Course.objects.get(pk=request.data['course']).professor
         if prof != request.user:
