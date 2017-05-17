@@ -1,3 +1,4 @@
+from django.db.models import Q
 from rest_framework import viewsets, mixins, status
 from rest_framework.decorators import list_route
 from rest_framework.permissions import IsAdminUser, IsAuthenticated
@@ -5,7 +6,7 @@ from rest_framework.response import Response
 
 from .models import Course, Repository, Assignment, Submission
 from .serializers import CourseSerializer, CourseWithoutStudentsSerializer
-from .serializers import RepositorySerializer, AssignmentSerializer
+from .serializers import RepositorySerializer
 from .serializers import SubmissionSerializer, AssignmentCreateSerializer
 from .permissions import IsOwnerProfessorOrReadOnly
 from .permissions import IsCourseOwnerProfessorOrReadOnly
@@ -21,6 +22,13 @@ class CourseViewSet(viewsets.GenericViewSet,
 
     def list(self, request, *args, **kwargs):
         queryset = self.filter_queryset(self.get_queryset())
+
+        keyword = request.query_params.get("keyword", None)
+
+        if keyword is not None:
+            queryset = \
+                queryset.filter(Q(title__contains=keyword) |
+                                Q(professor__profile__name__contains=keyword))
 
         page = self.paginate_queryset(queryset)
         if page is not None:
