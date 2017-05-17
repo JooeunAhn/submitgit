@@ -46,9 +46,9 @@ class AssignmentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Assignment
         fields = (
-            "id", "title", "test_time", "content", "attachments", 'course', "deadline",
+            "id", "title", "test_time", "content", "attachments", 'course',
             "is_test", "test_file_name", "test_input", "test_output",
-            "created_at", "updated_at")
+            "test_langids", "deadline", "created_at", "updated_at")
 
 
 class CourseSerializer(serializers.ModelSerializer):
