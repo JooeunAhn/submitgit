@@ -1,4 +1,10 @@
+from datetime import datetime, timezone
+
+from django.core.files.base import ContentFile
 from django.db.models import Q
+from django.http import HttpResponse
+from django.shortcuts import get_object_or_404
+
 from rest_framework import viewsets, mixins, status
 from rest_framework.decorators import list_route
 from rest_framework.permissions import IsAdminUser, IsAuthenticated
@@ -10,6 +16,79 @@ from .serializers import RepositorySerializer, AssignmentSerializer
 from .serializers import SubmissionSerializer, AssignmentCreateSerializer
 from .permissions import IsOwnerProfessorOrReadOnly
 from .permissions import IsCourseOwnerProfessorOrReadOnly
+from .utils import connect_queue
+
+github_url = "https://raw.githubusercontent.com/"
+lang_extension = {
+    0: ".py",
+    1: ".rb",
+    2: ".clj",
+    3: ".php",
+    4: ".js",
+    5: ".scala",
+    6: ".go",
+    7: ".c",
+    8: ".java",
+    9: ".vb",
+    10: ".cs",
+    11: ".sh",
+    12: ".m",
+    13: ".sql",
+    14: ".pl",
+    15: ".cpp"
+}
+
+
+def manual(request, pk):
+    import requests as rq
+    from requests.exceptions import RequestException
+    now = datetime.now(timezone.utc)
+    assignment = get_object_or_404(Assignment, pk=pk)
+
+    if assignment.deadline < now:
+        return HttpResponse("you can't submit the assignment")
+
+    repo = Repository.objects.filter(course=assignment.course,
+                                     student=request.user,
+                                     is_verified=True).first()
+    if not repo:
+        return HttpResponse("you are not registered in this course")
+
+    repo_url = [i for i in repo.url.split('/') if i != ""]
+    github_repo_name = repo_url.pop()
+    github_username = repo_url.pop()
+
+    code = ""
+    langid = None
+
+    for lang in assignment.test_langids.split(','):
+        lang = int(lang)
+        res = rq.get(github_url+"%s/%s/master/%s%s" % (github_username,
+                                                       github_repo_name,
+                                                       assignment.test_file_name,
+                                                       lang_extension[lang]))
+        try:
+            res.raise_for_status()
+        except RequestException:
+            continue
+        code = res.text
+        langid = lang
+        if langid == 15:
+            langid = 7
+
+    if code is "":
+        return HttpResponse("There isn't any code")
+
+    f = ContentFile(code, name=assignment.test_file_name+lang_extension[lang])
+    submission = Submission.objects.create(student=request.user,
+                                           assignment=assignment,
+                                           raw_code=f)
+    queue_data = {'id': submission.pk, 'stdin': assignment.test_input,
+                  'time': assignment.test_time, 'is_test': assignment.is_test,
+                  'output': assignment.test_output, 'language': langid,
+                  'code': code}
+    connect_queue(queue_data)
+    return HttpResponse("Submitted")
 
 
 class CourseViewSet(viewsets.GenericViewSet,
@@ -193,8 +272,7 @@ class AssignmentViewSet(viewsets.GenericViewSet,
             return Response("Professors are not allowed",
                             status=status.HTTP_401_UNAUTHORIZED)
 
-        from datetime import datetime
-        now = datetime.now()
+        now = datetime.now(timezone.utc)
         repo_list = Repository.objects.filter(student=request.user,
                                               is_verified=True)
         course_list = Course.objects.filter(repository__in=repo_list)

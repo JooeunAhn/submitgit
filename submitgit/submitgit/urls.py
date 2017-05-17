@@ -23,7 +23,7 @@ from rest_framework_swagger.views import get_swagger_view
 
 from accounts.views import ProfileViewSet, TestViewSet
 from portal.views import CourseViewSet, RepositoryViewSet, AssignmentViewSet
-from portal.views import SubmissionViewSet
+from portal.views import SubmissionViewSet, manual
 
 schema_view = get_swagger_view(title="submitgit API")
 
@@ -48,4 +48,5 @@ urlpatterns = [
     url(r'^api/v1/rest-auth/registration/', include('rest_auth.registration.urls')),
     # health checker for AWS EB
     url(r'^health$', include('health_check.urls')),
+    url(r'manual/(?P<pk>\d+)/$', manual, name="manual"),
 ]
