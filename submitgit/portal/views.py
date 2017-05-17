@@ -6,7 +6,7 @@ from rest_framework.response import Response
 from .models import Course, Repository, Assignment, Submission
 from .serializers import CourseSerializer, CourseWithoutStudentsSerializer
 from .serializers import RepositorySerializer, AssignmentSerializer
-from .serializers import SubmissionSerializer
+from .serializers import SubmissionSerializer, AssignmentCreateSerializer
 from .permissions import IsOwnerProfessorOrReadOnly
 from .permissions import IsCourseOwnerProfessorOrReadOnly
 
@@ -129,7 +129,7 @@ class AssignmentViewSet(viewsets.GenericViewSet,
     def create(self, request, *args, **kwargs):
         if request.user.profile.is_prof:
             return Response("Prof Only", status=status.HTTP_403_FORBIDDEN)
-        serializer = self.get_serializer(data=request.data)
+        serializer = AssignmentCreateSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         prof = Course.objects.get(pk=request.data['course']).professor
         if prof != request.user:

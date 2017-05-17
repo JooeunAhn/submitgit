@@ -42,12 +42,20 @@ class SubmissionSerializer(serializers.ModelSerializer):
 
 
 class AssignmentSerializer(serializers.ModelSerializer):
-
     class Meta:
         model = Assignment
         fields = (
             "id", "title", "test_time", "content", "attachments", 'course',
             "is_test", "test_file_name",
+            "test_langids", "deadline", "created_at", "updated_at")
+
+
+class AssignmentCreateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Assignment
+        fields = (
+            "id", "title", "test_time", "content", "attachments", "course",
+            "is_test", "test_file_name", "test_input", "test_output",
             "test_langids", "deadline", "created_at", "updated_at")
 
 
