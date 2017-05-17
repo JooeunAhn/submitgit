@@ -80,8 +80,10 @@ class Assignment(models.Model):
 
 def update_filename(instance, filename):
     import os
-    path = "uploads/test_history/%Y/%m/%d/" + str(instance.assignment.id) + "/"
-    filename = instance.student.profile.sid + "-" + filename
+    import uuid
+    random_id = str(uuid.uuid4())
+    path = "uploads/history/%s/" % (random_id,)
+    filename = str(instance.student.profile.sid) + "-" + filename
     return os.path.join(path, filename)
 
 
@@ -94,7 +96,7 @@ class Submission(models.Model):
         (4, "Javascript"),
         (5, "Scala"),
         (6, "Go"),
-        (7, "C,C++"),
+        (7, "C"),
         (8, "Java"),
         (9, "VB.NET"),
         (10, "C#"),
@@ -102,6 +104,7 @@ class Submission(models.Model):
         (12, "Objective-C"),
         (13, "MySQL"),
         (14, "Perl"),
+        (15, "C++"),
     )
     student = models.ForeignKey(settings.AUTH_USER_MODEL,
                                 limit_choices_to={'profile__is_prof': False},
@@ -112,7 +115,8 @@ class Submission(models.Model):
     is_working = models.BooleanField(default=True)
     is_last_submission = models.BooleanField(default=True)
     has_error = models.BooleanField(default=False)
-    raw_code = models.FileField(upload_to=update_filename, blank=True)
+    raw_code = models.FileField(upload_to=update_filename,
+                                blank=True)
     code = models.TextField(max_length=5000, blank=True)
     langid = models.IntegerField(choices=LANG_CHOICES, null=True, blank=True)
     errors = models.TextField(max_length=5000, blank=True)
