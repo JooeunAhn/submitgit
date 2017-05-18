@@ -261,7 +261,8 @@ class AssignmentViewSet(viewsets.GenericViewSet,
         data['id'] = instance.pk
         data['title'] = instance.title
         data['content'] = instance.content
-        data['attachments'] = instance.attachments.url
+        data['attachments'] = instance.attachments.url \
+            if instance.attachments else None
         data['course'] = instance.course.pk
         data['deadline'] = instance.deadline
         data['is_test'] = instance.is_test
