@@ -42,6 +42,14 @@ class ProfileViewSet(viewsets.GenericViewSet,
     serializer_class = ProfileSerializer
     permission_classes = (IsAuthenticated, IsOwnerOrReadOnly)
 
+    def create(self, request, *args, **kwargs):
+        data = request.data.copy()
+        github_username = data.get('githut_username')
+        if Profile.objects.filter(github_username=github_username).exists():
+            return Response("This username already exists",
+                            status=status.HTTP_400_BAD_REQUEST)
+        return super(ProfileViewSet, self).create(request, *args, **kwargs)
+
     def retrieve(self, request, pk=None):
         if pk != "me":
             return Response(status=status.HTTP_403_FORBIDDEN)
