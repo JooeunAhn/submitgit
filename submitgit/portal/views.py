@@ -221,7 +221,7 @@ class AssignmentViewSet(viewsets.GenericViewSet,
     permission_classes = (IsAuthenticated, IsCourseOwnerProfessorOrReadOnly)
 
     def create(self, request, *args, **kwargs):
-        if request.user.profile.is_prof:
+        if not request.user.profile.is_prof:
             return Response("Prof Only", status=status.HTTP_403_FORBIDDEN)
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
