@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import Profile, Test
+from .models import Profile
 
 
 class ProfileSerializer(serializers.ModelSerializer):
@@ -10,9 +10,3 @@ class ProfileSerializer(serializers.ModelSerializer):
         model = Profile
         fields = ('user', 'is_prof', 'username',
                   'email', 'name', 'sid', 'github_username')
-
-
-class TestSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Test
-        fields = ('langid', 'code', 'errors', 'time', 'output')

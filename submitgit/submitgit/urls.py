@@ -21,7 +21,7 @@ from allauth.account.views import confirm_email
 from rest_framework import routers
 from rest_framework_swagger.views import get_swagger_view
 
-from accounts.views import ProfileViewSet, TestViewSet
+from accounts.views import ProfileViewSet
 from portal.views import CourseViewSet, RepositoryViewSet, AssignmentViewSet
 from portal.views import SubmissionViewSet, manual
 
@@ -29,7 +29,6 @@ schema_view = get_swagger_view(title="submitgit API")
 
 router = routers.SimpleRouter()
 router.register(r'profile', ProfileViewSet)
-router.register(r'test', TestViewSet)
 
 router.register('course', CourseViewSet)
 router.register('repo', RepositoryViewSet)
