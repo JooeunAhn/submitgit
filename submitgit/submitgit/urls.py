@@ -23,7 +23,7 @@ from rest_framework_swagger.views import get_swagger_view
 
 from accounts.views import ProfileViewSet
 from portal.views import CourseViewSet, RepositoryViewSet, AssignmentViewSet
-from portal.views import SubmissionViewSet, manual
+from portal.views import SubmissionViewSet, EncryptedCodeViewSet, manual
 
 schema_view = get_swagger_view(title="submitgit API")
 
@@ -34,6 +34,7 @@ router.register('course', CourseViewSet)
 router.register('repo', RepositoryViewSet)
 router.register('assignment', AssignmentViewSet)
 router.register('submission', SubmissionViewSet)
+router.register('encryptor', EncryptedCodeViewSet)
 
 
 urlpatterns = [

@@ -1,7 +1,7 @@
 from django.contrib.auth import get_user_model
 from rest_framework import serializers
 
-from .models import Course, Repository, Assignment, Submission
+from .models import Course, Repository, Assignment, Submission, EncryptedCode
 from accounts.models import Profile
 
 
@@ -39,6 +39,12 @@ class SubmissionSerializer(serializers.ModelSerializer):
         fields = ("id", "student", "assignment", "is_passed", "has_error",
                   "raw_code", "code", "langid", "errors", "output", "time",
                   "is_working", "created_at", "updated_at")
+
+
+class EncryptedCodeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = EncryptedCode
+        fields = ('id', 'assignment', 'student', 'code')
 
 
 class AssignmentSerializer(serializers.ModelSerializer):

@@ -10,10 +10,11 @@ from rest_framework.decorators import list_route
 from rest_framework.permissions import IsAdminUser, IsAuthenticated
 from rest_framework.response import Response
 
-from .models import Course, Repository, Assignment, Submission
+from .models import Course, Repository, Assignment, Submission, EncryptedCode
 from .serializers import CourseSerializer, CourseWithoutStudentsSerializer
 from .serializers import RepositorySerializer, AssignmentSerializer
 from .serializers import SubmissionSerializer, AssignmentCreateSerializer
+from .serializers import EncryptedCodeSerializer
 from .permissions import IsOwnerProfessorOrReadOnly
 from .permissions import IsCourseOwnerProfessorOrReadOnly
 from .utils import connect_queue
@@ -300,3 +301,33 @@ class SubmissionViewSet(viewsets.ModelViewSet):
     queryset = Submission.objects.all()
     serializer_class = SubmissionSerializer
     permission_classes = (IsAdminUser,)
+
+
+class EncryptedCodeViewSet(viewsets.GenericViewSet,
+                           mixins.CreateModelMixin,
+                           mixins.RetrieveModelMixin):
+    queryset = EncryptedCode.objects.all()
+    serializer_class = EncryptedCodeSerializer
+    permission_classes = (IsAuthenticated,)
+
+    def create(self, request, *args, **kwargs):
+        assignment = Assignment.objects.filter(
+            pk=request.data['assignment']).first()
+        if assignment is None or \
+           not Repository.objects.filter(student=request.user,
+                                         course=assignment.course,
+                                         is_verified=True).exists():
+            return Response("You are not registered",
+                            status=status.HTTP_403_FORBIDDEN)
+        data = request.data.copy()
+        data['student'] = request.user.pk
+        # TODO: Encrypting
+        # return: <class 'django.core.files.uploadedfile.InMemoryUploadedFile'>
+        # return ext: .tar
+        serializer = self.get_serializer(data=data)
+        serializer.is_valid(raise_exception=True)
+        self.perform_create(serializer)
+        headers = self.get_success_headers(serializer.data)
+        return Response(serializer.data,
+                        status=status.HTTP_201_CREATED,
+                        headers=headers)

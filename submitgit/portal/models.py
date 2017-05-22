@@ -140,3 +140,13 @@ class Submission(models.Model):
         Submission.objects.filter(student=self.student) \
             .update(is_last_submission=False)
         super(Submission, self).save(*args, **kwargs)
+
+
+class EncryptedCode(models.Model):
+    student = models.ForeignKey(settings.AUTH_USER_MODEL,
+                                limit_choices_to={'profile__is_prof': False},
+                                on_delete=models.CASCADE)
+    assignment = models.ForeignKey(Assignment,
+                                   on_delete=models.CASCADE,
+                                   related_name="encrypted")
+    code = models.FileField(upload_to='/upload/ef/%Y/%m/%d/')
