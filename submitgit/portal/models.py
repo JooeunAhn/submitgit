@@ -45,6 +45,7 @@ class Repository(models.Model):
                                on_delete=models.CASCADE)
     is_verified = models.BooleanField(default=False)
     url = models.URLField()
+    key = models.BinaryField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -53,6 +54,13 @@ class Repository(models.Model):
             self.course.full_semester,
             self.course.title,
             self.student.profile.name)
+
+    def save(self, *args, **kwargs):
+        from Crypto.Hash import SHA256
+        import uuid
+        seed = str(uuid.uuid4()).encode('utf-8')
+        self.key = SHA256.new(seed).digest()
+        super(Repository, self).save(*args, **kwargs)
 
 
 class Assignment(models.Model):
