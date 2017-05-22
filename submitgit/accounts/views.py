@@ -44,8 +44,10 @@ class ProfileViewSet(viewsets.GenericViewSet,
 
     def create(self, request, *args, **kwargs):
         data = request.data.copy()
+        is_prof = data.get('is_prof')
         github_username = data.get('githut_username')
-        if Profile.objects.filter(github_username=github_username).exists():
+        if is_prof is False and \
+           Profile.objects.filter(github_username=github_username).exists():
             return Response("This username already exists",
                             status=status.HTTP_400_BAD_REQUEST)
         return super(ProfileViewSet, self).create(request, *args, **kwargs)
