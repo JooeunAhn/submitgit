@@ -150,3 +150,22 @@ class EncryptedCode(models.Model):
                                    on_delete=models.CASCADE,
                                    related_name="encrypted")
     code = models.FileField(upload_to='/upload/ef/%Y/%m/%d/')
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def save(self, *args, **kwargs):
+        from .crypto import encrypt
+        repo = Repository.objects.get(student=self.student,
+                                      course=self.assignment.course,
+                                      is_verified=True)
+        key = repo.key
+        name = self.code.name
+        enc_code = encrypt(key=key, data=self.code.file.file,
+                           size=self.code.file.size)
+        self.code.file.file = enc_code
+        self.code.name = name + '.joon'
+        from .crypto import decrypt
+        dec_code, size = decrypt(key=key, data=self.code.file.file)
+        self.code.file.file = dec_code
+        self.code.file.truncate(size)
+        self.code.name = name
+        super(EncryptedCode, self).save(*args, **kwargs)

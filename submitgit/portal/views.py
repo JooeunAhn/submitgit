@@ -1,6 +1,8 @@
 from datetime import datetime, timezone
+from io import BytesIO
 
 from django.core.files.base import ContentFile
+from django.contrib.auth import get_user_model
 from django.db.models import Q
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
@@ -42,7 +44,12 @@ lang_extension = {
 
 def manual(request, pk):
     import requests as rq
+    from .crypto import decrypt
     from requests.exceptions import RequestException
+
+    username = request.GET.get('username', None)
+    if username is None:
+        return HttpResponse("plz add username")
     now = datetime.now(timezone.utc)
     assignment = get_object_or_404(Assignment, pk=pk)
 
@@ -50,12 +57,12 @@ def manual(request, pk):
         return HttpResponse("you can't submit the assignment")
 
     repo = Repository.objects.filter(course=assignment.course,
-                                     student=request.user,
+                                     student__username=username,
                                      is_verified=True).first()
     if not repo:
         return HttpResponse("you are not registered in this course")
 
-    if Submission.objects.filter(student=request.user,
+    if Submission.objects.filter(student__username=username,
                                  assignment=assignment,
                                  is_working=True).exists():
         return HttpResponse("your assignment is on grading")
@@ -67,28 +74,47 @@ def manual(request, pk):
     code = ""
     langid = None
 
+    rq_builder = lambda ext: rq.get(github_url+"%s/%s/master/%s%s" % (
+        github_username,
+        github_repo_name,
+        assignment.test_file_name,
+        ext))
+
     for lang in assignment.test_langids.split(','):
         lang = int(lang)
-        res = rq.get(
-            github_url+"%s/%s/master/%s%s" % (github_username,
-                                              github_repo_name,
-                                              assignment.test_file_name,
-                                              lang_extension[lang])
-            )
-        try:
-            res.raise_for_status()
-        except RequestException:
-            continue
-        code = res.text
-        langid = lang
-        if langid == 15:
-            langid = 7
+        ext = lang_extension[lang]
+        is_enc = False
+        for i in range(2):
+            res = rq_builder(ext)
+            try:
+                res.raise_for_status()
+            except RequestException:
+                is_enc = True
+                ext += '.joon'
+                continue
+            if is_enc:
+                # 이번 프로젝트 최대의 깨달음....
+                raw_code = res.content
+                key = repo.key
+                enc_code = BytesIO(raw_code)
+                dec_code, size = decrypt(key, enc_code)
+                dec_code.truncate(size)
+                code = dec_code.read().decode('utf-8')
+            else:
+                code = res.text
+            langid = lang
+            if langid == 15:
+                langid = 7
+            break
+        if code is not "":
+            break
 
     if code is "":
         return HttpResponse("There isn't any code")
 
     f = ContentFile(code, name=assignment.test_file_name+lang_extension[lang])
-    submission = Submission.objects.create(student=request.user,
+    user = get_user_model().objects.get(username=username)
+    submission = Submission.objects.create(student=user,
                                            assignment=assignment,
                                            raw_code=f)
     queue_data = {'id': submission.pk, 'stdin': assignment.test_input,
