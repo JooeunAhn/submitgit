@@ -163,9 +163,11 @@ class EncryptedCode(models.Model):
                            size=self.code.file.size)
         self.code.file.file = enc_code
         self.code.name = name + '.joon'
+        """
         from .crypto import decrypt
         dec_code, size = decrypt(key=key, data=self.code.file.file)
         self.code.file.file = dec_code
         self.code.file.truncate(size)
         self.code.name = name
+        """
         super(EncryptedCode, self).save(*args, **kwargs)

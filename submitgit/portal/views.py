@@ -50,6 +50,7 @@ def manual(request, pk):
     username = request.GET.get('username', None)
     if username is None:
         return HttpResponse("plz add username")
+    user = get_user_model().objects.get(username=username)
     now = datetime.now(timezone.utc)
     assignment = get_object_or_404(Assignment, pk=pk)
 
@@ -57,12 +58,12 @@ def manual(request, pk):
         return HttpResponse("you can't submit the assignment")
 
     repo = Repository.objects.filter(course=assignment.course,
-                                     student__username=username,
+                                     student=user,
                                      is_verified=True).first()
     if not repo:
         return HttpResponse("you are not registered in this course")
 
-    if Submission.objects.filter(student__username=username,
+    if Submission.objects.filter(student=user,
                                  assignment=assignment,
                                  is_working=True).exists():
         return HttpResponse("your assignment is on grading")
@@ -94,12 +95,16 @@ def manual(request, pk):
                 continue
             if is_enc:
                 # 이번 프로젝트 최대의 깨달음....
+                # res.text => force type casting to str, res.content => binary
                 raw_code = res.content
                 key = repo.key
                 enc_code = BytesIO(raw_code)
                 dec_code, size = decrypt(key, enc_code)
                 dec_code.truncate(size)
-                code = dec_code.read().decode('utf-8')
+                try:
+                    code = dec_code.read().decode('utf-8')
+                except UnicodeDecodeError:
+                    pass
             else:
                 code = res.text
             langid = lang
@@ -113,7 +118,6 @@ def manual(request, pk):
         return HttpResponse("There isn't any code")
 
     f = ContentFile(code, name=assignment.test_file_name+lang_extension[lang])
-    user = get_user_model().objects.get(username=username)
     submission = Submission.objects.create(student=user,
                                            assignment=assignment,
                                            raw_code=f)
