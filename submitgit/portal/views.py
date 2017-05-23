@@ -351,9 +351,6 @@ class EncryptedCodeViewSet(viewsets.GenericViewSet,
                             status=status.HTTP_403_FORBIDDEN)
         data = request.data.copy()
         data['student'] = request.user.pk
-        # TODO: Encrypting
-        # return: <class 'django.core.files.uploadedfile.InMemoryUploadedFile'>
-        # return ext: .tar
         serializer = self.get_serializer(data=data)
         serializer.is_valid(raise_exception=True)
         self.perform_create(serializer)
