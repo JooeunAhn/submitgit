@@ -137,6 +137,20 @@ class CourseViewSet(viewsets.GenericViewSet,
     serializer_class = CourseSerializer
     permission_classes = (IsAuthenticated, IsOwnerProfessorOrReadOnly)
 
+    @list_route(methods=['get'])
+    def me(self, request, *args, **kwargs):
+        queryset = self.filter_queryset(self.get_queryset())
+        repo_queryset = Repository.objects.filter(student=request.user,
+                                                  is_verified=True)
+        queryset = queryset.filter(repository__in=repo_queryset) \
+            .distinct()
+        page = self.paginate_queryset(queryset)
+        if page is not None:
+            serializer = CourseWithoutStudentsSerializer(page, many=True)
+            return self.get_paginated_response(serializer.data)
+        serializer = CourseWithoutStudentsSerializer(queryset, many=True)
+        return Response(serializer.data)
+
     def list(self, request, *args, **kwargs):
         queryset = self.filter_queryset(self.get_queryset())
 
