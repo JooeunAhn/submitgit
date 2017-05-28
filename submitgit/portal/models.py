@@ -137,7 +137,8 @@ class Submission(models.Model):
         return "%s %s %s" % (self.id, self.assignment, self.student.profile)
 
     def save(self, *args, **kwargs):
-        Submission.objects.filter(student=self.student) \
+        Submission.objects.filter(student=self.student,
+                                  assignment=self.assignment) \
             .update(is_last_submission=False)
         super(Submission, self).save(*args, **kwargs)
 

@@ -129,6 +129,34 @@ def manual(request, pk):
     return HttpResponse("Submitted")
 
 
+def download_zip(request, pk):
+    from zipfile import ZipFile
+    in_memory = BytesIO()
+    zip_file = ZipFile(in_memory, "a")
+    assignment = get_object_or_404(Assignment, pk=pk)
+    submission_list = Submission.objects.filter(assignment=assignment,
+                                                is_last_submission=True)
+
+    for submission in submission_list:
+        f = submission.raw_code.file
+        name = f.name.split('/').pop()
+        code = f.read()
+        zip_file.writestr(name, code)
+
+    # fix for Linux zip files read in Windows
+    for f in zip_file.filelist:
+        f.create_system = 0
+
+    zip_file.close()
+
+    response = HttpResponse(content_type="application/zip")
+    response["Content-Disposition"] = "attachment; filename=%s.zip" % \
+        (assignment.title,)
+    in_memory.seek(0)
+    response.write(in_memory.read())
+    return response
+
+
 class CourseViewSet(viewsets.GenericViewSet,
                     mixins.CreateModelMixin,
                     mixins.UpdateModelMixin,

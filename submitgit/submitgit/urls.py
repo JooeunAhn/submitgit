@@ -24,6 +24,7 @@ from rest_framework_swagger.views import get_swagger_view
 from accounts.views import ProfileViewSet
 from portal.views import CourseViewSet, RepositoryViewSet, AssignmentViewSet
 from portal.views import SubmissionViewSet, EncryptedCodeViewSet, manual
+from portal.views import download_zip
 
 schema_view = get_swagger_view(title="submitgit API")
 
@@ -49,4 +50,5 @@ urlpatterns = [
     # health checker for AWS EB
     url(r'^health$', include('health_check.urls')),
     url(r'manual/(?P<pk>\d+)/$', manual, name="manual"),
+    url(r'download_zip/(?P<pk>\d+)/$', download_zip, name="download_zip"),
 ]
