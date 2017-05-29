@@ -168,7 +168,7 @@ class CourseViewSet(viewsets.GenericViewSet,
     @list_route(methods=['get'])
     def me(self, request, *args, **kwargs):
         queryset = self.filter_queryset(self.get_queryset())
-        if request.user.is_prof:
+        if request.user.profile.is_prof:
             queryset = queryset.filter(professor=request.user)
         else:
             repo_queryset = Repository.objects.filter(student=request.user,
