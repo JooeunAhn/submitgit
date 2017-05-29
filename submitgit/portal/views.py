@@ -168,10 +168,13 @@ class CourseViewSet(viewsets.GenericViewSet,
     @list_route(methods=['get'])
     def me(self, request, *args, **kwargs):
         queryset = self.filter_queryset(self.get_queryset())
-        repo_queryset = Repository.objects.filter(student=request.user,
-                                                  is_verified=True)
-        queryset = queryset.filter(repository__in=repo_queryset) \
-            .distinct()
+        if request.user.is_prof:
+            queryset = queryset.filter(professor=request.user)
+        else:
+            repo_queryset = Repository.objects.filter(student=request.user,
+                                                      is_verified=True)
+            queryset = queryset.filter(repository__in=repo_queryset) \
+                .distinct()
         page = self.paginate_queryset(queryset)
         if page is not None:
             serializer = CourseWithoutStudentsSerializer(page, many=True)
