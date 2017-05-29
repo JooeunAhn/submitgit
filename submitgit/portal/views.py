@@ -82,6 +82,8 @@ def manual(request, pk):
         ext))
 
     for lang in assignment.test_langids.split(','):
+        if lang == "":
+            continue
         lang = int(lang)
         ext = lang_extension[lang]
         is_enc = False
