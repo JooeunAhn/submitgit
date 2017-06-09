@@ -15,20 +15,6 @@ from .serializers import ProfileSerializer
 from .permissions import IsOwnerOrReadOnly
 
 
-@receiver(user_signed_up)
-def _user_signed_up(request, user, **kwargs):
-    user.is_active = False
-    user.save()
-
-
-@receiver(email_confirmed)
-def _email_confirmed(request, email_address, **kwargs):
-    email = EmailAddress.objects.get(email=email_address)
-    user = User.objects.get(email.user)
-    user.is_active = True
-    user.save()
-
-
 class GitHubLogin(SocialLoginView):
     adapter_class = GitHubOAuth2Adapter
     client_class = OAuth2Client
