@@ -16,7 +16,7 @@ from .models import Course, Repository, Assignment, Submission, EncryptedCode
 from .serializers import CourseSerializer, CourseWithoutStudentsSerializer
 from .serializers import RepositorySerializer, AssignmentSerializer
 from .serializers import SubmissionSerializer, AssignmentCreateSerializer
-from .serializers import EncryptedCodeSerializer
+from .serializers import EncryptedCodeSerializer, SubmissionCreateSerializer
 from .permissions import IsOwnerProfessorOrReadOnly
 from .permissions import IsCourseOwnerProfessorOrReadOnly
 from .utils import connect_queue
@@ -378,6 +378,30 @@ class SubmissionViewSet(viewsets.ModelViewSet):
     queryset = Submission.objects.all()
     serializer_class = SubmissionSerializer
     permission_classes = (IsAdminUser,)
+
+    def create(self, request, *args, **kwargs):
+        serializer = SubmissionCreateSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        self.perform_create(serializer)
+        headers = self.get_success_headers(serializer.data)
+        return Response(serializer.data, status=status.HTTP_201_CREATED,
+                        headers=headers)
+
+    def update(self, request, *args, **kwargs):
+        partial = kwargs.pop('partial', False)
+        instance = self.get_object()
+        serializer = SubmissionCreateSerializer(instance,
+                                                data=request.data,
+                                                partial=partial)
+        serializer.is_valid(raise_exception=True)
+        self.perform_update(serializer)
+
+        if getattr(instance, '_prefetched_objects_cache', None):
+            # If 'prefetch_related' has been applied to a queryset, we need to
+            # forcibly invalidate the prefetch cache on the instance.
+            instance._prefetched_objects_cache = {}
+
+        return Response(serializer.data)
 
 
 class EncryptedCodeViewSet(viewsets.GenericViewSet,
