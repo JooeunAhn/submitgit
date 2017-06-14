@@ -43,6 +43,15 @@ class SubmissionSerializer(serializers.ModelSerializer):
                   "is_working", "created_at", "updated_at")
 
 
+class SubmissionCreateSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Submission
+        fields = ("id", "student", "assignment", "is_passed", "has_error",
+                  "raw_code", "code", "langid", "errors", "output", "time",
+                  "is_working", "created_at", "updated_at")
+
+
 class EncryptedCodeSerializer(serializers.ModelSerializer):
     class Meta:
         model = EncryptedCode
