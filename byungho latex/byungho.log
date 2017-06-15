@@ -1,0 +1,1837 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.6.8)  13 JUN 2017 19:12
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**./byungho.tex
+(./byungho.tex
+LaTeX2e <2017-04-15>
+Babel <3.10> and hyphenation patterns for 84 language(s) loaded.
+(./IEEEtran.cls
+Document Class: IEEEtran 2015/08/26 V1.8b by Michael Shell
+-- See the "IEEEtran_HOWTO" manual for usage information.
+-- http://www.michaelshell.org/tex/ieeetran/
+\@IEEEtrantmpdimenA=\dimen102
+\@IEEEtrantmpdimenB=\dimen103
+\@IEEEtrantmpdimenC=\dimen104
+\@IEEEtrantmpcountA=\count79
+\@IEEEtrantmpcountB=\count80
+\@IEEEtrantmpcountC=\count81
+\@IEEEtrantmptoksA=\toks14
+LaTeX Font Info:    Try loading font information for OT1+ppl on input line 503.
+
+(c:/texlive/2017/texmf-dist/tex/latex/psnfss/ot1ppl.fd
+File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
+)
+-- Using IEEE Computer Society mode.
+-- Using 8.5in x 11in (letter) paper.
+-- Using PDF output.
+\@IEEEnormalsizeunitybaselineskip=\dimen105
+-- This is a 10 point document.
+\CLASSINFOnormalsizebaselineskip=\dimen106
+\CLASSINFOnormalsizeunitybaselineskip=\dimen107
+\IEEEnormaljot=\dimen108
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <5.01874> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <5.01874> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <7.02625> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <7.02625> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <8.03> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <8.03> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <9.03374> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <9.03374> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <9.53561> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <9.53561> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <11.04124> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <11.04124> not available
+
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <12.045> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <12.045> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <17.06374> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <17.06374> not available
+
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <20.075> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <20.075> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <24.09> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <24.09> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 1090.
+
+\IEEEquantizedlength=\dimen109
+\IEEEquantizedlengthdiff=\dimen110
+\IEEEquantizedtextheightdiff=\dimen111
+\IEEEilabelindentA=\dimen112
+\IEEEilabelindentB=\dimen113
+\IEEEilabelindent=\dimen114
+\IEEEelabelindent=\dimen115
+\IEEEdlabelindent=\dimen116
+\IEEElabelindent=\dimen117
+\IEEEiednormlabelsep=\dimen118
+\IEEEiedmathlabelsep=\dimen119
+\IEEEiedtopsep=\skip41
+\c@section=\count82
+\c@subsection=\count83
+\c@subsubsection=\count84
+\c@paragraph=\count85
+\c@IEEEsubequation=\count86
+\abovecaptionskip=\skip42
+\belowcaptionskip=\skip43
+\c@figure=\count87
+\c@table=\count88
+\@IEEEeqnnumcols=\count89
+\@IEEEeqncolcnt=\count90
+\@IEEEsubeqnnumrollback=\count91
+\@IEEEquantizeheightA=\dimen120
+\@IEEEquantizeheightB=\dimen121
+\@IEEEquantizeheightC=\dimen122
+\@IEEEquantizeprevdepth=\dimen123
+\@IEEEquantizemultiple=\count92
+\@IEEEquantizeboxA=\box26
+\@IEEEtmpitemindent=\dimen124
+\IEEEPARstartletwidth=\dimen125
+\c@IEEEbiography=\count93
+\@IEEEtranrubishbin=\box27
+) (c:/texlive/2017/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2008/02/07
+
+Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
+<2008/02/07> (tvz) (c:/texlive/2017/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks15
+)
+\FV@CodeLineNo=\count94
+\FV@InFile=\read1
+\FV@TabBox=\box28
+\c@FancyVerbLine=\count95
+\FV@StepNumber=\count96
+\FV@OutFile=\write3
+)
+(c:/texlive/2017/texmf-dist/tex/latex/tools/enumerate.sty
+Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
+\@enLab=\toks16
+)
+(c:/texlive/2017/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(c:/texlive/2017/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2017/04/14 v1.1b Standard LaTeX Graphics (DPC,SPQR)
+
+(c:/texlive/2017/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(c:/texlive/2017/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+
+(c:/texlive/2017/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2017/01/12 v0.06k Graphics/color for pdfTeX
+
+(c:/texlive/2017/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+(c:/texlive/2017/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count97
+))
+\Gin@req@height=\dimen126
+\Gin@req@width=\dimen127
+)
+(c:/texlive/2017/texmf-dist/tex/latex/here/here.sty)
+(c:/texlive/2017/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count98
+\float@exts=\toks17
+\float@box=\box29
+\@float@everytoks=\toks18
+\@floatcapt=\box30
+)
+(c:/texlive/2017/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+
+(c:/texlive/2017/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen128
+\captionmargin@=\dimen129
+\captionwidth=\dimen130
+\caption@tempdima=\dimen131
+\caption@indent=\dimen132
+\caption@parindent=\dimen133
+\caption@hangindent=\dimen134
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used.
+)
+
+Package caption Warning: Unsupported document class (or package) detected,
+(caption)                usage of the caption package is not recommended.
+See the caption package documentation for explanation.
+
+Package caption Info: \@makecaption = \long macro:#1#2->\ifx \@captype \@IEEEta
+blestring \footnotesize \bgroup \par \centering \@IEEEtabletopskipstrut {\norma
+lfont \sffamily \footnotesize #1}\\{\normalfont \sffamily \footnotesize #2}\par
+ \addvspace {0.5\baselineskip }\egroup \@IEEEtablecaptionsepspace \else \@IEEEf
+igurecaptionsepspace \setbox \@tempboxa \hbox {\normalfont \sffamily \footnotes
+ize {#1.}\nobreakspace #2}\ifdim \wd \@tempboxa >\hsize \setbox \@tempboxa \hbo
+x {\normalfont \sffamily \footnotesize {#1.}\nobreakspace }\parbox [t]{\hsize }
+{\normalfont \sffamily \footnotesize \noindent \unhbox \@tempboxa #2}\else \hbo
+x to\hsize {\normalfont \sffamily \footnotesize \box \@tempboxa \hfil }\fi \fi 
+.
+\c@ContinuedFloat=\count99
+Package caption Info: float package is loaded.
+) (c:/texlive/2017/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2016/04/27 v1.618033 publication quality tables
+\heavyrulewidth=\dimen135
+\lightrulewidth=\dimen136
+\cmidrulewidth=\dimen137
+\belowrulesep=\dimen138
+\belowbottomsep=\dimen139
+\aboverulesep=\dimen140
+\abovetopsep=\dimen141
+\cmidrulesep=\dimen142
+\cmidrulekern=\dimen143
+\defaultaddspace=\dimen144
+\@cmidla=\count100
+\@cmidlb=\count101
+\@aboverulesep=\dimen145
+\@belowrulesep=\dimen146
+\@thisruleclass=\count102
+\@lastruleclass=\count103
+\@thisrulewidth=\dimen147
+)
+(c:/texlive/2017/texmf-dist/tex/latex/siunitx/siunitx.sty
+(c:/texlive/2017/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2017/05/29 L3 programming layer (loader) 
+
+(c:/texlive/2017/texmf-dist/tex/latex/l3kernel/expl3-code.tex
+Package: expl3 2017/05/29 L3 programming layer (code)
+\c_max_int=\count104
+\l_tmpa_int=\count105
+\l_tmpb_int=\count106
+\g_tmpa_int=\count107
+\g_tmpb_int=\count108
+\g__intarray_font_int=\count109
+\g__prg_map_int=\count110
+\c_log_iow=\count111
+\l_iow_line_count_int=\count112
+\l__iow_line_target_int=\count113
+\l__iow_one_indent_int=\count114
+\l__iow_indent_int=\count115
+\c_zero_dim=\dimen148
+\c_max_dim=\dimen149
+\l_tmpa_dim=\dimen150
+\l_tmpb_dim=\dimen151
+\g_tmpa_dim=\dimen152
+\g_tmpb_dim=\dimen153
+\c_zero_skip=\skip44
+\c_max_skip=\skip45
+\l_tmpa_skip=\skip46
+\l_tmpb_skip=\skip47
+\g_tmpa_skip=\skip48
+\g_tmpb_skip=\skip49
+\c_zero_muskip=\muskip10
+\c_max_muskip=\muskip11
+\l_tmpa_muskip=\muskip12
+\l_tmpb_muskip=\muskip13
+\g_tmpa_muskip=\muskip14
+\g_tmpb_muskip=\muskip15
+\l_keys_choice_int=\count116
+\c__fp_leading_shift_int=\count117
+\c__fp_middle_shift_int=\count118
+\c__fp_trailing_shift_int=\count119
+\c__fp_big_leading_shift_int=\count120
+\c__fp_big_middle_shift_int=\count121
+\c__fp_big_trailing_shift_int=\count122
+\c__fp_Bigg_leading_shift_int=\count123
+\c__fp_Bigg_middle_shift_int=\count124
+\c__fp_Bigg_trailing_shift_int=\count125
+\c__fp_rand_size_int=\count126
+\c__fp_rand_four_int=\count127
+\c__fp_rand_eight_int=\count128
+\l__sort_length_int=\count129
+\l__sort_min_int=\count130
+\l__sort_top_int=\count131
+\l__sort_max_int=\count132
+\l__sort_true_max_int=\count133
+\l__sort_block_int=\count134
+\l__sort_begin_int=\count135
+\l__sort_end_int=\count136
+\l__sort_A_int=\count137
+\l__sort_B_int=\count138
+\l__sort_C_int=\count139
+\l__tl_build_start_index_int=\count140
+\l__tl_build_index_int=\count141
+\l__tl_analysis_normal_int=\count142
+\l__tl_analysis_index_int=\count143
+\l__tl_analysis_nesting_int=\count144
+\l__tl_analysis_type_int=\count145
+\l__regex_internal_a_int=\count146
+\l__regex_internal_b_int=\count147
+\l__regex_internal_c_int=\count148
+\l__regex_balance_int=\count149
+\l__regex_group_level_int=\count150
+\l__regex_mode_int=\count151
+\c__regex_cs_in_class_mode_int=\count152
+\c__regex_cs_mode_int=\count153
+\l__regex_catcodes_int=\count154
+\l__regex_default_catcodes_int=\count155
+\c__regex_catcode_D_int=\count156
+\c__regex_catcode_S_int=\count157
+\c__regex_catcode_L_int=\count158
+\c__regex_catcode_O_int=\count159
+\c__regex_catcode_A_int=\count160
+\c__regex_all_catcodes_int=\count161
+\l__regex_show_lines_int=\count162
+\l__regex_min_state_int=\count163
+\l__regex_max_state_int=\count164
+\l__regex_left_state_int=\count165
+\l__regex_right_state_int=\count166
+\l__regex_capturing_group_int=\count167
+\l__regex_min_pos_int=\count168
+\l__regex_max_pos_int=\count169
+\l__regex_current_pos_int=\count170
+\l__regex_start_pos_int=\count171
+\l__regex_success_pos_int=\count172
+\l__regex_current_char_int=\count173
+\l__regex_current_catcode_int=\count174
+\l__regex_last_char_int=\count175
+\l__regex_case_changed_char_int=\count176
+\l__regex_current_state_int=\count177
+\l__regex_step_int=\count178
+\l__regex_min_active_int=\count179
+\l__regex_max_active_int=\count180
+\l__regex_replacement_csnames_int=\count181
+\l__regex_match_count_int=\count182
+\l__regex_min_submatch_int=\count183
+\l__regex_submatch_int=\count184
+\l__regex_zeroth_submatch_int=\count185
+\c_empty_box=\box31
+\l_tmpa_box=\box32
+\l_tmpb_box=\box33
+\g_tmpa_box=\box34
+\g_tmpb_box=\box35
+\l__box_top_dim=\dimen154
+\l__box_bottom_dim=\dimen155
+\l__box_left_dim=\dimen156
+\l__box_right_dim=\dimen157
+\l__box_top_new_dim=\dimen158
+\l__box_bottom_new_dim=\dimen159
+\l__box_left_new_dim=\dimen160
+\l__box_right_new_dim=\dimen161
+\l__box_internal_box=\box36
+\l__coffin_internal_box=\box37
+\l__coffin_internal_dim=\dimen162
+\l__coffin_offset_x_dim=\dimen163
+\l__coffin_offset_y_dim=\dimen164
+\l__coffin_x_dim=\dimen165
+\l__coffin_y_dim=\dimen166
+\l__coffin_x_prime_dim=\dimen167
+\l__coffin_y_prime_dim=\dimen168
+\c_empty_coffin=\box38
+\l__coffin_aligned_coffin=\box39
+\l__coffin_aligned_internal_coffin=\box40
+\l_tmpa_coffin=\box41
+\l_tmpb_coffin=\box42
+\l__coffin_display_coffin=\box43
+\l__coffin_display_coord_coffin=\box44
+\l__coffin_display_pole_coffin=\box45
+\l__coffin_display_offset_dim=\dimen169
+\l__coffin_display_x_dim=\dimen170
+\l__coffin_display_y_dim=\dimen171
+\l__coffin_bounding_shift_dim=\dimen172
+\l__coffin_left_corner_dim=\dimen173
+\l__coffin_right_corner_dim=\dimen174
+\l__coffin_bottom_corner_dim=\dimen175
+\l__coffin_top_corner_dim=\dimen176
+\l__coffin_scaled_total_height_dim=\dimen177
+\l__coffin_scaled_width_dim=\dimen178
+)
+(c:/texlive/2017/texmf-dist/tex/latex/l3kernel/l3pdfmode.def
+File: l3pdfmode.def 2017/03/18 v L3 Experimental driver: PDF mode
+\l__driver_color_stack_int=\count186
+\l__driver_tmp_box=\box46
+))
+(c:/texlive/2017/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+Package: xparse 2017/05/29 L3 Experimental document command parser
+\l__xparse_current_arg_int=\count187
+\g__xparse_grabber_int=\count188
+\l__xparse_m_args_int=\count189
+\l__xparse_mandatory_args_int=\count190
+\l__xparse_v_nesting_int=\count191
+)
+Package: siunitx 2017/05/19 v2.7g A comprehensive (SI) units package
+
+(c:/texlive/2017/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(c:/texlive/2017/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks19
+\ex@=\dimen179
+))
+(c:/texlive/2017/texmf-dist/tex/latex/tools/array.sty
+Package: array 2016/10/06 v2.4d Tabular extension package (FMi)
+\col@sep=\dimen180
+\extrarowheight=\dimen181
+\NC@list=\toks20
+\extratabsurround=\skip50
+\backup@length=\skip51
+)
+(c:/texlive/2017/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
+Package: l3keys2e 2017/05/29 LaTeX2e option processing using LaTeX3 keys
+)
+\l__siunitx_tmp_box=\box47
+\l__siunitx_tmp_dim=\dimen182
+\l__siunitx_tmp_int=\count192
+\l__siunitx_number_mantissa_length_int=\count193
+\l__siunitx_number_uncert_length_int=\count194
+\l__siunitx_round_int=\count195
+\l__siunitx_process_decimal_int=\count196
+\l__siunitx_process_uncertainty_int=\count197
+\l__siunitx_process_fixed_int=\count198
+\l__siunitx_process_integer_min_int=\count199
+\l__siunitx_process_precision_int=\count266
+\l__siunitx_group_min_int=\count267
+\l__siunitx_angle_marker_box=\box48
+\l__siunitx_angle_unit_box=\box49
+\l__siunitx_angle_marker_dim=\dimen183
+\l__siunitx_angle_unit_dim=\dimen184
+\l__siunitx_unit_int=\count268
+\l__siunitx_unit_denominator_int=\count269
+\l__siunitx_unit_numerator_int=\count270
+\l__siunitx_unit_prefix_int=\count271
+\l__siunitx_unit_prefix_base_int=\count272
+\l__siunitx_unit_prefix_gram_int=\count273
+\l__siunitx_number_product_int=\count274
+\c__siunitx_one_fill_skip=\skip52
+\l__siunitx_table_unit_align_skip=\skip53
+\l__siunitx_table_exponent_dim=\dimen185
+\l__siunitx_table_integer_dim=\dimen186
+\l__siunitx_table_mantissa_dim=\dimen187
+\l__siunitx_table_marker_dim=\dimen188
+\l__siunitx_table_result_dim=\dimen189
+\l__siunitx_table_uncert_dim=\dimen190
+\l__siunitx_table_fill_pre_dim=\dimen191
+\l__siunitx_table_fill_post_dim=\dimen192
+\l__siunitx_table_fill_mid_dim=\dimen193
+\l__siunitx_table_pre_box=\box50
+\l__siunitx_table_post_box=\box51
+\l__siunitx_table_mantissa_box=\box52
+\l__siunitx_table_result_box=\box53
+\l__siunitx_table_number_align_skip=\skip54
+\l__siunitx_table_text_align_skip=\skip55
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareBinaryPrefix with sig. 'mmm' on line 7251.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareSIPostPower with sig. 'mm' on line 7254.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareSIPrefix with sig. 'mmm' on line 7257.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareSIPrePower with sig. 'mm' on line 7260.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareSIQualifier with sig. 'mm' on line 7263.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareSIUnit with sig. 'O{}mm' on line 7266.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareSIUnitWithOptions with sig. 'mmm' on line 7269.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \ang with sig. 'o>{\SplitArgument {2}{;}}m' on line 7284.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \num with sig. 'om' on line 7293.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \numlist with sig. 'o>{\SplitList {;}}m' on line 7302.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \numrange with sig. 'omm' on line 7311.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \SIlist with sig. 'o>{\SplitList {;}}mm' on line 7323.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \SIrange with sig. 'ommm' on line 7335.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \SI with sig. 'omom' on line 7347.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \sisetup with sig. 'm' on line 7350.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \tablenum with sig. 'om' on line 7365.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \si with sig. 'om' on line 7377.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \numInBookmark with sig. 'om' on line 7424.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \numrangeInBookmark with sig. 'omm' on line 7426.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \SIInBookmark with sig. 'omom' on line 7428.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \SIlistInBookmark with sig. 'omm' on line 7430.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \SIrangeInBookmark with sig. 'ommm' on line 7432.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \siInBookmark with sig. 'om' on line 7433.
+.................................................
+\g__file_internal_ior=\read2
+
+(c:/texlive/2017/texmf-dist/tex/latex/beamer/translator/translator.sty
+Package: translator 2010/06/12 ver 1.10
+
+(c:/texlive/2017/texmf-dist/tex/latex/beamer/translator/translator-language-map
+pings.tex))) (c:/texlive/2017/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2016/11/05 v2.16a AMS math features
+\@mathmargin=\skip56
+
+For additional information on amsmath, use the `?' option.
+(c:/texlive/2017/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen194
+)
+(c:/texlive/2017/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count275
+LaTeX Info: Redefining \frac on input line 213.
+\uproot@=\count276
+\leftroot@=\count277
+LaTeX Info: Redefining \overline on input line 375.
+\classnum@=\count278
+\DOTSCASE@=\count279
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
+\Mathstrutbox@=\box54
+\strutbox@=\box55
+\big@size=\dimen195
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
+\macc@depth=\count280
+\c@MaxMatrixCols=\count281
+\dotsspace@=\muskip16
+\c@parentequation=\count282
+\dspbrk@lvl=\count283
+\tag@help=\toks21
+\row@=\count284
+\column@=\count285
+\maxfields@=\count286
+\andhelp@=\toks22
+\eqnshift@=\dimen196
+\alignsep@=\dimen197
+\tagshift@=\dimen198
+\tagwidth@=\dimen199
+\totwidth@=\dimen256
+\lineht@=\dimen257
+\@envbody=\toks23
+\multlinegap=\skip57
+\multlinetaggap=\skip58
+\mathdisplay@stack=\toks24
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
+)
+(c:/texlive/2017/texmf-dist/tex/latex/cite/cite.sty
+LaTeX Info: Redefining \cite on input line 302.
+LaTeX Info: Redefining \nocite on input line 332.
+Package: cite 2015/02/27  v 5.5
+) (./byungho.aux)
+\openout1 = `byungho.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 561.
+LaTeX Font Info:    ... okay on input line 561.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 561.
+LaTeX Font Info:    ... okay on input line 561.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 561.
+LaTeX Font Info:    ... okay on input line 561.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 561.
+LaTeX Font Info:    ... okay on input line 561.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 561.
+LaTeX Font Info:    ... okay on input line 561.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 561.
+LaTeX Font Info:    ... okay on input line 561.
+
+-- Lines per column: 61 (exact).
+(c:/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count287
+\scratchdimen=\dimen258
+\scratchbox=\box56
+\nofMPsegments=\count288
+\nofMParguments=\count289
+\everyMPshowfont=\toks25
+\MPscratchCnt=\count290
+\MPscratchDim=\dimen259
+\MPnumerator=\count291
+\makeMPintoPDFobject=\count292
+\everyMPtoPDFconversion=\toks26
+) (c:/texlive/2017/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(c:/texlive/2017/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(c:/texlive/2017/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(c:/texlive/2017/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(c:/texlive/2017/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+(c:/texlive/2017/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+))
+(c:/texlive/2017/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+(c:/texlive/2017/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+(c:/texlive/2017/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+
+(c:/texlive/2017/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+
+(c:/texlive/2017/texmf-dist/tex/latex/beamer/translator/dicts/translator-basic-
+dictionary/translator-basic-dictionary-English.dict
+Dictionary: translator-basic-dictionary, Language: English 
+)
+(c:/texlive/2017/texmf-dist/tex/latex/siunitx/siunitx-abbreviations.cfg
+File: siunitx-abbreviations.cfg 2017/05/19 v2.7g siunitx: Abbreviated units
+)
+\c__siunitx_mathsf_int=\count293
+LaTeX Font Info:    Calculating math sizes for size <9.53561> on input line 561
+.
+\c__siunitx_mathtt_int=\count294
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 643.
+
+
+(c:/texlive/2017/texmf-dist/tex/latex/psnfss/ot1phv.fd
+File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
+)
+LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <11.04124> not available
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 643.
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <8.03> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 643.
+LaTeX Font Info:    Calculating math sizes for size <11.04124> on input line 64
+3.
+LaTeX Font Info:    Try loading font information for U+pzd on input line 643.
+
+(c:/texlive/2017/texmf-dist/tex/latex/psnfss/upzd.fd
+File: upzd.fd 2001/06/04 font definitions for U/pzd.
+)
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <11.04124> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 668.
+LaTeX Font Info:    Font shape `OT1/phv/bx/sc' in size <11.04124> not available
+
+(Font)              Font shape `OT1/phv/b/sc' tried instead on input line 668.
+
+Underfull \hbox (badness 10000) in paragraph at lines 699--702
+\OT1/ppl/m/n/9.53561 class as-sign-ments sub-mis-sion and su-per-vi-sion
+ []
+
+
+Underfull \hbox (badness 1960) in paragraph at lines 699--702
+\OT1/ppl/m/n/9.53561 hand writ-ten as-sign-ments are only par-tially ef-fec-tiv
+e
+ []
+
+
+Underfull \hbox (badness 4328) in paragraph at lines 699--702
+\OT1/ppl/m/n/9.53561 for pre-vent-ing copy-ing other stu-dents' as-sign-ments.
+ []
+
+
+Underfull \hbox (badness 1490) in paragraph at lines 699--702
+\OT1/ppl/m/n/9.53561 Pro-fes-sors may have al-ready re-al-ized; how-ever, hand
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 699--702
+
+ []
+
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <9.53561> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 718.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <9.53561> not available
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 724.
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ô in font pplr7t!
+
+Underfull \hbox (badness 10000) in paragraph at lines 736--741
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 736--741
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 736--741
+
+ []
+
+
+Underfull \hbox (badness 1831) in paragraph at lines 736--741
+[] \OT1/ppl/m/n/9.53561 Pe-riod set-ting: The pro-fes-sor can set a dead-line
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 736--741
+
+ []
+
+[1{c:/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+
+]
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ò in font pplr7t!
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ô in font pplr7t!
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ô in font pplr7t!
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ô in font pplr7t!
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ô in font pplr7t!
+
+Underfull \hbox (badness 10000) in paragraph at lines 761--762
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 761--762
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 761--762
+
+ []
+
+LaTeX Font Info:    Calculating math sizes for size <8.03> on input line 769.
+
+Underfull \hbox (badness 10000) in paragraph at lines 797--797
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 801--801
+ \OT1/phv/b/n/9.53561 3.2 Pro-gram-ming Lan-guage and De-vel-op-ment
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 801--801
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 801--801
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 803--804
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 805--806
+
+ []
+
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ô in font pplr7t!
+
+Underfull \hbox (badness 1546) in paragraph at lines 807--808
+[] \OT1/ppl/m/n/9.53561 b)TypeScript is a Su-per-set of Javascript: Since
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 807--808
+
+ []
+
+[2]
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ú in font pplr7t!
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ù in font pplr7t!
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ô in font pplr7t!
+
+Underfull \hbox (badness 6125) in paragraph at lines 821--826
+\OT1/ppl/m/n/9.53561 b)AWS Route53: Route53 is used to set up our
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 821--826
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 830--830
+
+ []
+
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ú in font pplr7t!
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ú in font pplr7t!
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ô in font pplr7t!
+<"docker1".png, id=14, 1370.11874pt x 568.1225pt>
+File: "docker1".png Graphic file (type png)
+ <use "docker1".png>
+Package pdftex.def Info: "docker1".png used on input line 838.
+(pdftex.def)             Requested size: 258.9675pt x 107.3809pt.
+
+Overfull \hbox (6.0225pt too wide) in paragraph at lines 838--839
+ [][] 
+ []
+
+<"docker2".png, id=16, 1313.90875pt x 699.61375pt>
+File: "docker2".png Graphic file (type png)
+ <use "docker2".png>
+Package pdftex.def Info: "docker2".png used on input line 844.
+(pdftex.def)             Requested size: 258.9675pt x 137.89197pt.
+
+Overfull \hbox (6.0225pt too wide) in paragraph at lines 844--845
+ [][] 
+ []
+
+[3 <./docker1.png
+
+pdfTeX warning: pdflatex.exe (file ./docker1.png): large interlaced PNG might c
+ause out of memory (use non-interlaced PNG to fix this)
+> <./docker2.png
+
+pdfTeX warning: pdflatex.exe (file ./docker2.png): large interlaced PNG might c
+ause out of memory (use non-interlaced PNG to fix this)
+>] <"Interaction overview".png, id=22, 540.0175pt x 464.73625pt>
+File: "Interaction overview".png Graphic file (type png)
+
+<use "Interaction overview".png>
+Package pdftex.def Info: "Interaction overview".png used on input line 858.
+(pdftex.def)             Requested size: 258.9675pt x 222.8723pt.
+
+Overfull \hbox (6.0225pt too wide) in paragraph at lines 858--859
+ [][] 
+ []
+
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ô in font pplr7t!
+<"Database FlowChart".png, id=23, 474.77374pt x 334.24875pt>
+File: "Database FlowChart".png Graphic file (type png)
+
+<use "Database FlowChart".png>
+Package pdftex.def Info: "Database FlowChart".png used on input line 874.
+(pdftex.def)             Requested size: 258.9675pt x 182.3226pt.
+
+Overfull \hbox (6.0225pt too wide) in paragraph at lines 874--875
+ [][] 
+ []
+
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ì in font pplr7t!
+
+Underfull \hbox (badness 10000) in paragraph at lines 888--888
+
+ []
+
+<"User Interface".png, id=24, 442.65375pt x 532.99126pt>
+File: "User Interface".png Graphic file (type png)
+
+<use "User Interface".png>
+Package pdftex.def Info: "User Interface".png used on input line 891.
+(pdftex.def)             Requested size: 258.9675pt x 311.83524pt.
+
+Overfull \hbox (6.0225pt too wide) in paragraph at lines 891--892
+ [][] 
+ []
+
+
+Underfull \vbox (badness 2828) has occurred while \output is active []
+
+ [4
+
+ <./Interaction overview.png> <./Database FlowChart.png>]
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ô in font pplr7t!
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ô in font pplr7t!
+
+<"Create Course".png, id=30, 574.145pt x 377.41pt>
+File: "Create Course".png Graphic file (type png)
+ <use "Create Course".png>
+Package pdftex.def Info: "Create Course".png used on input line 901.
+(pdftex.def)             Requested size: 207.17084pt x 136.17847pt.
+
+Underfull \vbox (badness 4242) has occurred while \output is active []
+
+
+<"Create Assignment".png, id=31, 566.115pt x 499.8675pt>
+File: "Create Assignment".png Graphic file (type png)
+
+<use "Create Assignment".png>
+Package pdftex.def Info: "Create Assignment".png used on input line 909.
+(pdftex.def)             Requested size: 207.17084pt x 182.92682pt.
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ô in font pplr7t!
+
+<"Assignment Management".png, id=32, 577.15625pt x 378.41376pt>
+File: "Assignment Management".png Graphic file (type png)
+
+<use "Assignment Management".png>
+Package pdftex.def Info: "Assignment Management".png used on input line 916.
+(pdftex.def)             Requested size: 207.17084pt x 135.83043pt.
+ [5 <./User Interface.png> <./Create Course.png> <./Create Assignment.png> <./A
+ssignment Management.png>]
+<"Course Registration".png, id=40, 582.175pt x 394.47375pt>
+File: "Course Registration".png Graphic file (type png)
+
+<use "Course Registration".png>
+Package pdftex.def Info: "Course Registration".png used on input line 925.
+(pdftex.def)             Requested size: 207.17084pt x 140.37321pt.
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ô in font pplr7t!
+
+<"Link Course".png, id=41, 581.17125pt x 351.3125pt>
+File: "Link Course".png Graphic file (type png)
+ <use "Link Course".png>
+Package pdftex.def Info: "Link Course".png used on input line 933.
+(pdftex.def)             Requested size: 258.9675pt x 156.5453pt.
+
+Overfull \hbox (6.0225pt too wide) in paragraph at lines 933--934
+ [][] 
+ []
+
+<"Assignment Submission and Check".png, id=42, 576.1525pt x 383.4325pt>
+File: "Assignment Submission and Check".png Graphic file (type png)
+
+<use "Assignment Submission and Check".png>
+Package pdftex.def Info: "Assignment Submission and Check".png used on input li
+ne 940.
+(pdftex.def)             Requested size: 258.9675pt x 172.34996pt.
+
+Overfull \hbox (6.0225pt too wide) in paragraph at lines 940--941
+ [][] 
+ []
+
+<"Design Interaction".png, id=43, 555.07375pt x 268.00125pt>
+File: "Design Interaction".png Graphic file (type png)
+
+<use "Design Interaction".png>
+Package pdftex.def Info: "Design Interaction".png used on input line 956.
+(pdftex.def)             Requested size: 258.9675pt x 125.03639pt.
+
+Overfull \hbox (6.0225pt too wide) in paragraph at lines 956--957
+ [][] 
+ []
+
+<"Django Overall Design".png, id=44, 715.92468pt x 353.06906pt>
+File: "Django Overall Design".png Graphic file (type png)
+
+<use "Django Overall Design".png>
+Package pdftex.def Info: "Django Overall Design".png used on input line 964.
+(pdftex.def)             Requested size: 258.9675pt x 127.71353pt.
+
+Overfull \hbox (6.0225pt too wide) in paragraph at lines 964--965
+ [][] 
+ []
+
+<"Amazon Bucket".png, id=45, 252.945pt x 292.09125pt>
+File: "Amazon Bucket".png Graphic file (type png)
+
+<use "Amazon Bucket".png>
+Package pdftex.def Info: "Amazon Bucket".png used on input line 974.
+(pdftex.def)             Requested size: 207.17084pt x 239.23557pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6 <./Course Registration.png> <./Link Course.png> <./Assignment Submission an
+d Check.png> <./Design Interaction.png> <./Django Overall Design.png>]
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ò in font pplr7t!
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ô in font pplr7t!
+
+<"Route 53".png, id=53, 390.45876pt x 168.63pt>
+File: "Route 53".png Graphic file (type png)
+ <use "Route 53".png>
+Package pdftex.def Info: "Route 53".png used on input line 983.
+(pdftex.def)             Requested size: 258.9675pt x 111.84677pt.
+
+Overfull \hbox (6.0225pt too wide) in paragraph at lines 983--984
+ [][] 
+ []
+
+<"Elastic beanstalk".png, id=54, 829.0975pt x 484.81125pt>
+File: "Elastic beanstalk".png Graphic file (type png)
+
+<use "Elastic beanstalk".png>
+Package pdftex.def Info: "Elastic beanstalk".png used on input line 993.
+(pdftex.def)             Requested size: 258.9675pt x 151.42915pt.
+
+Overfull \hbox (6.0225pt too wide) in paragraph at lines 993--994
+ [][] 
+ []
+
+
+Underfull \vbox (badness 3058) has occurred while \output is active []
+
+
+<"Load Balancing".png, id=55, 333.245pt x 350.30875pt>
+File: "Load Balancing".png Graphic file (type png)
+
+<use "Load Balancing".png>
+Package pdftex.def Info: "Load Balancing".png used on input line 1001.
+(pdftex.def)             Requested size: 207.17084pt x 217.7825pt.
+ <"EC2 Server".png, id=56, 294.09875pt x 99.37125pt>
+File: "EC2 Server".png Graphic file (type png)
+
+<use "EC2 Server".png>
+Package pdftex.def Info: "EC2 Server".png used on input line 1009.
+(pdftex.def)             Requested size: 207.17084pt x 70.00063pt.
+ [7 <./Amazon Bucket.png> <./Route 53.png> <./Elastic beanstalk.png> <./Load Ba
+lancing.png>]
+<"Docker".png, id=65, 210.7875pt x 146.5475pt>
+File: "Docker".png Graphic file (type png)
+ <use "Docker".png>
+Package pdftex.def Info: "Docker".png used on input line 1018.
+(pdftex.def)             Requested size: 207.17084pt x 144.03593pt.
+
+<"Amazon S3 bucket Django Static Backends".png, id=66, 392.46625pt x 162.6075pt
+>
+File: "Amazon S3 bucket Django Static Backends".png Graphic file (type png)
+ <use "Amazon S3 bucket Django Static Backends".png>
+Package pdftex.def Info: "Amazon S3 bucket Django Static Backends".png used on 
+input line 1026.
+(pdftex.def)             Requested size: 207.17084pt x 85.83667pt.
+
+<"Overview of Kronos and Rabbit".png, id=67, 737.75626pt x 215.80624pt>
+File: "Overview of Kronos and Rabbit".png Graphic file (type png)
+
+<use "Overview of Kronos and Rabbit".png>
+Package pdftex.def Info: "Overview of Kronos and Rabbit".png used on input line
+ 1035.
+(pdftex.def)             Requested size: 207.17084pt x 60.59985pt.
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ò in font pplr7t!
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ô in font pplr7t!
+
+
+LaTeX Warning: File `"Picture of Amazon RDS.png' not found on input line 1044.
+
+<"Picture of Amazon RDS.png, id=68, 218.8175pt x 148.555pt>
+File: "Picture of Amazon RDS.png Graphic file (type png)
+
+<use "Picture of Amazon RDS.png>
+Package pdftex.def Info: "Picture of Amazon RDS.png used on input line 1044.
+(pdftex.def)             Requested size: 207.17084pt x 140.65042pt.
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ô in font pplr7t!
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ô in font pplr7t!
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ô in font pplr7t!
+ [8 <./EC2 Server.png> <./Docker.png> <./Amazon S3 bucket Django Static Backend
+s.png> <./Overview of Kronos and Rabbit.png> <./Picture of Amazon RDS.png>]
+<"Overview of Workers, Node and Amazon EC2".png, id=77, 346.29375pt x 532.99126
+pt>
+File: "Overview of Workers, Node and Amazon EC2".png Graphic file (type png)
+ <use "Overview of Workers, Node and Amazon EC2".png>
+Package pdftex.def Info: "Overview of Workers, Node and Amazon EC2".png used on
+ input line 1055.
+(pdftex.def)             Requested size: 207.17084pt x 318.87009pt.
+
+<"Overview of Folders".png, id=78, 291.0875pt x 754.82pt>
+File: "Overview of Folders".png Graphic file (type png)
+
+<use "Overview of Folders".png>
+Package pdftex.def Info: "Overview of Folders".png used on input line 1068.
+(pdftex.def)             Requested size: 207.17546pt x 282.61914pt.
+
+<"Picture of Guard".png, id=79, 343.2825pt x 70.2625pt>
+File: "Picture of Guard".png Graphic file (type png)
+
+<use "Picture of Guard".png>
+Package pdftex.def Info: "Picture of Guard".png used on input line 1077.
+(pdftex.def)             Requested size: 207.17084pt x 42.40332pt.
+
+<"Picture of Service".png, id=80, 570.13pt x 234.8775pt>
+File: "Picture of Service".png Graphic file (type png)
+
+<use "Picture of Service".png>
+Package pdftex.def Info: "Picture of Service".png used on input line 1086.
+(pdftex.def)             Requested size: 207.17084pt x 85.34789pt.
+ [9 <./Overview of Workers, Node and Amazon EC2.png> <./Overview of Folders.png
+> <./Picture of Guard.png>]
+<"Picutre of routing module".png, id=87, 526.96875pt x 581.17125pt>
+File: "Picutre of routing module".png Graphic file (type png)
+
+<use "Picutre of routing module".png>
+Package pdftex.def Info: "Picutre of routing module".png used on input line 109
+7.
+(pdftex.def)             Requested size: 207.17084pt x 228.48267pt.
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ò in font pplr7t!
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ô in font pplr7t!
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ò in font pplr7t!
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ô in font pplr7t!
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ò in font pplr7t!
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ô in font pplr7t!
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ò in font pplr7t!
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ô in font pplr7t!
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ò in font pplr7t!
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ô in font pplr7t!
+
+<"Picture of Rendering".png, id=88, 517.935pt x 205.76875pt>
+File: "Picture of Rendering".png Graphic file (type png)
+
+<use "Picture of Rendering".png>
+Package pdftex.def Info: "Picture of Rendering".png used on input line 1107.
+(pdftex.def)             Requested size: 207.17084pt x 82.30603pt.
+
+Underfull \vbox (badness 4072) has occurred while \output is active []
+
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ò in font pplr7t!
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ô in font pplr7t!
+
+<"Picture of Variable assignment".png, id=89, 596.2275pt x 399.4925pt>
+File: "Picture of Variable assignment".png Graphic file (type png)
+
+<use "Picture of Variable assignment".png>
+Package pdftex.def Info: "Picture of Variable assignment".png used on input lin
+e 1113.
+(pdftex.def)             Requested size: 207.17084pt x 138.81256pt.
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ò in font pplr7t!
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ô in font pplr7t!
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ò in font pplr7t!
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ô in font pplr7t!
+
+<"Picture of Cpu usage".png, id=90, 1010.77625pt x 512.91624pt>
+File: "Picture of Cpu usage".png Graphic file (type png)
+
+<use "Picture of Cpu usage".png>
+Package pdftex.def Info: "Picture of Cpu usage".png used on input line 1124.
+(pdftex.def)             Requested size: 207.17084pt x 105.12503pt.
+
+<"Picture of RDS".png, id=91, 1105.12875pt x 330.23375pt>
+File: "Picture of RDS".png Graphic file (type png)
+
+<use "Picture of RDS".png>
+Package pdftex.def Info: "Picture of RDS".png used on input line 1133.
+(pdftex.def)             Requested size: 155.38206pt x 46.42892pt.
+ [10 <./Picture of Service.png> <./Picutre of routing module.png> <./Picture of
+ Rendering.png> <./Picture of Variable assignment.png> <./Picture of Cpu usage.
+png>]
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ô in font pplr7t!
+
+Underfull \hbox (badness 1448) in paragraph at lines 1136--1137
+[]\OT1/ppl/m/n/9.53561 AWS RDS is also used. In this ser-vice, we used
+ []
+
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ô in font pplr7t!
+<"Code of Encryption".png, id=100, 454.69875pt x 445.665pt>
+File: "Code of Encryption".png Graphic file (type png)
+
+<use "Code of Encryption".png>
+Package pdftex.def Info: "Code of Encryption".png used on input line 1144.
+(pdftex.def)             Requested size: 181.2804pt x 177.67801pt.
+
+<"Example of Kronos".png, id=101, 531.9875pt x 475.7775pt>
+File: "Example of Kronos".png Graphic file (type png)
+
+<use "Example of Kronos".png>
+Package pdftex.def Info: "Example of Kronos".png used on input line 1153.
+(pdftex.def)             Requested size: 207.17084pt x 185.2766pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+<"Code of Rabbit MQ".png, id=102, 618.31pt x 197.73875pt>
+File: "Code of Rabbit MQ".png Graphic file (type png)
+
+<use "Code of Rabbit MQ".png>
+Package pdftex.def Info: "Code of Rabbit MQ".png used on input line 1160.
+(pdftex.def)             Requested size: 207.17084pt x 66.25269pt.
+
+<"Code of Compilebox".png, id=103, 545.03625pt x 571.13374pt>
+File: "Code of Compilebox".png Graphic file (type png)
+
+<use "Code of Compilebox".png>
+Package pdftex.def Info: "Code of Compilebox".png used on input line 1168.
+(pdftex.def)             Requested size: 207.17084pt x 217.08536pt.
+ [11 <./Picture of RDS.png> <./Code of Encryption.png> <./Example of Kronos.png
+> <./Code of Rabbit MQ.png> <./Code of Compilebox.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1179--1194
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1179--1194
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1179--1194
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1179--1194
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1179--1194
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1179--1194
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1179--1194
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1179--1194
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1179--1194
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1198--1200
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1201--1203
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1208--1209
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1210--1212
+
+ []
+
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ô in font pplr7t!
+
+Underfull \hbox (badness 10000) in paragraph at lines 1213--1215
+
+ []
+
+<"Overview of UML".png, id=112, 1019.30812pt x 636.87938pt>
+File: "Overview of UML".png Graphic file (type png)
+
+<use "Overview of UML".png>
+Package pdftex.def Info: "Overview of UML".png used on input line 1225.
+(pdftex.def)             Requested size: 207.17088pt x 353.2876pt.
+ [12 <./Overview of UML.png>]
+<"Student Sign Up".png, id=117, 567.11874pt x 466.74374pt>
+File: "Student Sign Up".png Graphic file (type png)
+
+<use "Student Sign Up".png>
+Package pdftex.def Info: "Student Sign Up".png used on input line 1249.
+(pdftex.def)             Requested size: 155.38206pt x 127.88132pt.
+
+<"Student Sign Up2".png, id=118, 576.1525pt x 476.78125pt>
+File: "Student Sign Up2".png Graphic file (type png)
+
+<use "Student Sign Up2".png>
+Package pdftex.def Info: "Student Sign Up2".png used on input line 1256.
+(pdftex.def)             Requested size: 207.17084pt x 171.43741pt.
+
+<"Student Sign In".png, id=119, 569.12625pt x 354.32375pt>
+File: "Student Sign In".png Graphic file (type png)
+
+<use "Student Sign In".png>
+Package pdftex.def Info: "Student Sign In".png used on input line 1263.
+(pdftex.def)             Requested size: 207.17084pt x 128.97836pt.
+
+Underfull \hbox (badness 1400) in paragraph at lines 1266--1267
+[]\OT1/ppl/m/n/9.53561 After users com-plete sign-ing up, user in-for-ma-tion
+ []
+
+<"Student Sign In Failure".png, id=120, 567.11874pt x 411.5375pt>
+File: "Student Sign In Failure".png Graphic file (type png)
+
+<use "Student Sign In Failure".png>
+Package pdftex.def Info: "Student Sign In Failure".png used on input line 1270.
+
+(pdftex.def)             Requested size: 207.17084pt x 150.33238pt.
+
+<"Student Add Profile".png, id=121, 561.09625pt x 394.47375pt>
+File: "Student Add Profile".png Graphic file (type png)
+
+<use "Student Add Profile".png>
+Package pdftex.def Info: "Student Add Profile".png used on input line 1277.
+(pdftex.def)             Requested size: 258.9675pt x 182.06204pt.
+
+Overfull \hbox (6.0225pt too wide) in paragraph at lines 1277--1278
+ [][] 
+ []
+
+<"Github Search".png, id=122, 852.18375pt x 609.27625pt>
+File: "Github Search".png Graphic file (type png)
+
+<use "Github Search".png>
+Package pdftex.def Info: "Github Search".png used on input line 1284.
+(pdftex.def)             Requested size: 258.9675pt x 185.15495pt.
+
+Overfull \hbox (6.0225pt too wide) in paragraph at lines 1284--1285
+ [][] 
+ []
+
+<"Add Profile 2".png, id=123, 579.16376pt x 415.5525pt>
+File: "Add Profile 2".png Graphic file (type png)
+
+<use "Add Profile 2".png>
+Package pdftex.def Info: "Add Profile 2".png used on input line 1292.
+(pdftex.def)             Requested size: 258.9675pt x 185.81116pt.
+
+Overfull \hbox (6.0225pt too wide) in paragraph at lines 1292--1293
+ [][] 
+ []
+
+[13 <./Student Sign Up.png> <./Student Sign Up2.png> <./Student Sign In.png> <.
+/Student Sign In Failure.png> <./Student Add Profile.png> <./Github Search.png>
+] <"Search and Register Courses".png, id=134, 864.22874pt x 443.6575pt>
+File: "Search and Register Courses".png Graphic file (type png)
+
+<use "Search and Register Courses".png>
+Package pdftex.def Info: "Search and Register Courses".png used on input line 1
+299.
+(pdftex.def)             Requested size: 258.9675pt x 132.94257pt.
+
+Overfull \hbox (6.0225pt too wide) in paragraph at lines 1299--1300
+ [][] 
+ []
+
+<"Search Engine Courses".png, id=135, 715.67375pt x 186.6975pt>
+File: "Search Engine Courses".png Graphic file (type png)
+
+<use "Search Engine Courses".png>
+Package pdftex.def Info: "Search Engine Courses".png used on input line 1306.
+(pdftex.def)             Requested size: 258.9675pt x 67.55574pt.
+
+Overfull \hbox (6.0225pt too wide) in paragraph at lines 1306--1307
+ [][] 
+ []
+
+<"Course Information".png, id=136, 881.2925pt x 665.48625pt>
+File: "Course Information".png Graphic file (type png)
+
+<use "Course Information".png>
+Package pdftex.def Info: "Course Information".png used on input line 1314.
+(pdftex.def)             Requested size: 258.9675pt x 195.545pt.
+
+Overfull \hbox (6.0225pt too wide) in paragraph at lines 1314--1315
+ [][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+<"Student Register Button".png, id=137, 464.73625pt x 325.215pt>
+File: "Student Register Button".png Graphic file (type png)
+
+<use "Student Register Button".png>
+Package pdftex.def Info: "Student Register Button".png used on input line 1321.
+
+(pdftex.def)             Requested size: 207.17084pt x 144.97081pt.
+
+<"Register Button Github".png, id=138, 253.94875pt x 206.7725pt>
+File: "Register Button Github".png Graphic file (type png)
+
+<use "Register Button Github".png>
+Package pdftex.def Info: "Register Button Github".png used on input line 1328.
+(pdftex.def)             Requested size: 207.17084pt x 168.69005pt.
+ [14 <./Add Profile 2.png> <./Search and Register Courses.png> <./Search Engine
+ Courses.png> <./Course Information.png> <./Student Register Button.png> <./Reg
+ister Button Github.png>]
+<"Student Assignment use case".png, id=148, 380.42125pt x 250.9375pt>
+File: "Student Assignment use case".png Graphic file (type png)
+
+<use "Student Assignment use case".png>
+Package pdftex.def Info: "Student Assignment use case".png used on input line 1
+340.
+(pdftex.def)             Requested size: 207.17084pt x 136.66057pt.
+
+<"Assignment List".png, id=149, 545.03625pt x 361.35pt>
+File: "Assignment List".png Graphic file (type png)
+
+<use "Assignment List".png>
+Package pdftex.def Info: "Assignment List".png used on input line 1346.
+(pdftex.def)             Requested size: 207.17084pt x 137.3475pt.
+
+<"Check Information Assignment".png, id=150, 552.0625pt x 407.5225pt>
+File: "Check Information Assignment".png Graphic file (type png)
+
+<use "Check Information Assignment".png>
+Package pdftex.def Info: "Check Information Assignment".png used on input line 
+1353.
+(pdftex.def)             Requested size: 258.9675pt x 191.17493pt.
+
+Overfull \hbox (6.0225pt too wide) in paragraph at lines 1353--1354
+ [][] 
+ []
+
+<"Assignment Encryption".png, id=151, 551.05875pt x 451.6875pt>
+File: "Assignment Encryption".png Graphic file (type png)
+
+<use "Assignment Encryption".png>
+Package pdftex.def Info: "Assignment Encryption".png used on input line 1360.
+(pdftex.def)             Requested size: 258.9675pt x 212.27248pt.
+
+Overfull \hbox (6.0225pt too wide) in paragraph at lines 1360--1361
+ [][] 
+ []
+
+<"Assignment Grade".png, id=152, 503.8825pt x 448.67625pt>
+File: "Assignment Grade".png Graphic file (type png)
+
+<use "Assignment Grade".png>
+Package pdftex.def Info: "Assignment Grade".png used on input line 1367.
+(pdftex.def)             Requested size: 258.9675pt x 230.59503pt.
+
+Overfull \hbox (6.0225pt too wide) in paragraph at lines 1367--1368
+ [][] 
+ []
+
+<"Professor Use Case".png, id=153, 401.5pt x 333.245pt>
+File: "Professor Use Case".png Graphic file (type png)
+
+<use "Professor Use Case".png>
+Package pdftex.def Info: "Professor Use Case".png used on input line 1378.
+(pdftex.def)             Requested size: 258.9675pt x 214.95917pt.
+
+Overfull \hbox (6.0225pt too wide) in paragraph at lines 1378--1379
+ [][] 
+ []
+
+[15 <./Student Assignment use case.png> <./Assignment List.png> <./Check Inform
+ation Assignment.png> <./Assignment Encryption.png> <./Assignment Grade.png>]
+<"Add Profile Professor".png, id=162, 566.115pt x 295.1025pt>
+File: "Add Profile Professor".png Graphic file (type png)
+
+<use "Add Profile Professor".png>
+Package pdftex.def Info: "Add Profile Professor".png used on input line 1385.
+(pdftex.def)             Requested size: 207.17084pt x 107.99294pt.
+
+<"Professor Create Course".png, id=163, 462.72874pt x 438.63875pt>
+File: "Professor Create Course".png Graphic file (type png)
+
+<use "Professor Create Course".png>
+Package pdftex.def Info: "Professor Create Course".png used on input line 1392.
+
+(pdftex.def)             Requested size: 207.17084pt x 196.38834pt.
+
+<"Course Create Form".png, id=164, 377.41pt x 471.7625pt>
+File: "Course Create Form".png Graphic file (type png)
+
+<use "Course Create Form".png>
+Package pdftex.def Info: "Course Create Form".png used on input line 1399.
+(pdftex.def)             Requested size: 207.17084pt x 258.95908pt.
+
+Underfull \vbox (badness 2418) has occurred while \output is active []
+
+
+<"Course Delete".png, id=165, 778.91pt x 592.2125pt>
+File: "Course Delete".png Graphic file (type png)
+ <use "Course Delete".png>
+Package pdftex.def Info: "Course Delete".png used on input line 1406.
+(pdftex.def)             Requested size: 258.9675pt x 196.89462pt.
+
+Overfull \hbox (6.0225pt too wide) in paragraph at lines 1406--1407
+ [][] 
+ []
+
+<"Course Acceptance Button".png, id=166, 525.965pt x 346.29375pt>
+File: "Course Acceptance Button".png Graphic file (type png)
+
+<use "Course Acceptance Button".png>
+Package pdftex.def Info: "Course Acceptance Button".png used on input line 1413
+.
+(pdftex.def)             Requested size: 258.9675pt x 170.50972pt.
+
+<"Acceptance button Korean".png, id=167, 498.86375pt x 126.4725pt>
+File: "Acceptance button Korean".png Graphic file (type png)
+
+<use "Acceptance button Korean".png>
+Package pdftex.def Info: "Acceptance button Korean".png used on input line 1414
+.
+(pdftex.def)             Requested size: 258.9675pt x 65.65607pt.
+
+Overfull \hbox (6.0225pt too wide) in paragraph at lines 1413--1415
+ [][] 
+ []
+
+
+Overfull \hbox (6.0225pt too wide) in paragraph at lines 1413--1415
+ [] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [16 <./Professor Use Case.png> <./Add Profile Professor.png> <./Professor Crea
+te Course.png> <./Course Create Form.png> <./Course Delete.png>]
+<"Cource Creation required form".png, id=176, 342.27875pt x 639.38875pt>
+File: "Cource Creation required form".png Graphic file (type png)
+
+<use "Cource Creation required form".png>
+Package pdftex.def Info: "Cource Creation required form".png used on input line
+ 1421.
+(pdftex.def)             Requested size: 207.17084pt x 387.01187pt.
+
+<"Professor Assignment use case".png, id=177, 153.57375pt x 139.27031pt>
+File: "Professor Assignment use case".png Graphic file (type png)
+
+<use "Professor Assignment use case".png>
+Package pdftex.def Info: "Professor Assignment use case".png used on input line
+ 1429.
+(pdftex.def)             Requested size: 251.00723pt x 227.6291pt.
+
+<"Check Submission Status".png, id=178, 655.44875pt x 478.78876pt>
+File: "Check Submission Status".png Graphic file (type png)
+
+<use "Check Submission Status".png>
+Package pdftex.def Info: "Check Submission Status".png used on input line 1437.
+
+(pdftex.def)             Requested size: 258.9675pt x 189.16696pt.
+
+Overfull \hbox (6.0225pt too wide) in paragraph at lines 1437--1438
+ [][] 
+ []
+
+<"Check Detail".png, id=179, 315.1775pt x 234.8775pt>
+File: "Check Detail".png Graphic file (type png)
+ <use "Check Detail".png>
+Package pdftex.def Info: "Check Detail".png used on input line 1444.
+(pdftex.def)             Requested size: 258.9675pt x 192.99861pt.
+
+Overfull \hbox (6.0225pt too wide) in paragraph at lines 1444--1445
+ [][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [17 <./Course Acceptance Button.png> <./Acceptance button Korean.png> <./Courc
+e Creation required form.png> <./Professor Assignment use case.png> <./Check Su
+bmission Status.png>]
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ô in font pplr7t!
+ <"Assignment Amendment".png, id=187, 348.30125pt x 615.29875pt>
+File: "Assignment Amendment".png Graphic file (type png)
+
+<use "Assignment Amendment".png>
+Package pdftex.def Info: "Assignment Amendment".png used on input line 1450.
+(pdftex.def)             Requested size: 207.17084pt x 365.98055pt.
+
+<"Downloading Assignment".png, id=188, 425.59pt x 239.89626pt>
+File: "Downloading Assignment".png Graphic file (type png)
+
+<use "Downloading Assignment".png>
+Package pdftex.def Info: "Downloading Assignment".png used on input line 1457.
+(pdftex.def)             Requested size: 207.17084pt x 116.77782pt.
+
+<"submission status student".png, id=189, 655.44875pt x 478.78876pt>
+File: "submission status student".png Graphic file (type png)
+
+<use "submission status student".png>
+Package pdftex.def Info: "submission status student".png used on input line 146
+4.
+(pdftex.def)             Requested size: 207.17084pt x 151.33064pt.
+
+<"Check Detail student".png, id=190, 315.1775pt x 234.8775pt>
+File: "Check Detail student".png Graphic file (type png)
+
+<use "Check Detail student".png>
+Package pdftex.def Info: "Check Detail student".png used on input line 1471.
+(pdftex.def)             Requested size: 207.17084pt x 154.38885pt.
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ô in font pplr7t!
+ [18 <./Check Detail.png> <./Assignment Amendment.png> <./Downloading Assignmen
+t.png> <./submission status student.png> <./Check Detail student.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1496--1509
+
+ []
+
+<"Table1".png, id=199, 364.36125pt x 525.46312pt>
+File: "Table1".png Graphic file (type png)
+ <use "Table1".png>
+Package pdftex.def Info: "Table1".png used on input line 1521.
+(pdftex.def)             Requested size: 466.13834pt x 672.26979pt.
+
+Overfull \hbox (213.19334pt too wide) in paragraph at lines 1521--1522
+ [][] 
+ []
+
+[19] [20
+
+ <./Table1.png>] <"Table2".png, id=208, 360.59718pt x 520.94624pt>
+File: "Table2".png Graphic file (type png)
+
+<use "Table2".png>
+Package pdftex.def Info: "Table2".png used on input line 1528.
+(pdftex.def)             Requested size: 466.13834pt x 673.42249pt.
+
+Overfull \hbox (213.19334pt too wide) in paragraph at lines 1528--1529
+ [][] 
+ []
+
+[21
+
+
+ <./Table2.png>] <"Table3".png, id=213, 356.83313pt x 542.025pt>
+File: "Table3".png Graphic file (type png)
+
+<use "Table3".png>
+Package pdftex.def Info: "Table3".png used on input line 1534.
+(pdftex.def)             Requested size: 466.13834pt x 708.08954pt.
+
+Overfull \hbox (213.19334pt too wide) in paragraph at lines 1534--1535
+ [][] 
+ []
+
+
+LaTeX Warning: Float too large for page by 15.25595pt on input line 1536.
+
+[22
+
+
+ <./Table3.png>] <"Table4".png, id=218, 289.83281pt x 408.77719pt>
+File: "Table4".png Graphic file (type png)
+
+<use "Table4".png>
+Package pdftex.def Info: "Table4".png used on input line 1541.
+(pdftex.def)             Requested size: 466.13834pt x 657.47498pt.
+
+Overfull \hbox (213.19334pt too wide) in paragraph at lines 1541--1542
+ [][] 
+ []
+
+[23
+
+
+ <./Table4.png>] (./byungho.aux) ) 
+Here is how much of TeX's memory you used:
+ 15348 strings out of 492995
+ 317049 string characters out of 6136403
+ 332928 words of memory out of 5000000
+ 18717 multiletter control sequences out of 15000+600000
+ 576164 words of font info for 121 fonts, out of 8000000 for 9000
+ 1144 hyphenation exceptions out of 8191
+ 39i,7n,39p,10360b,508s stack positions out of 5000i,500n,10000p,200000b,80000s
+{c:/texlive/2017/texmf-dist/fonts/enc/dvips/b
+ase/8r.enc}<c:/texlive/2017/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><c:/
+texlive/2017/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:/texlive/2017/te
+xmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb><c:/texlive/2017/texmf-dist/fonts
+/type1/urw/palatino/uplr8a.pfb><c:/texlive/2017/texmf-dist/fonts/type1/urw/zapf
+ding/uzdr.pfb>
+Output written on byungho.pdf (23 pages, 24470061 bytes).
+PDF statistics:
+ 242 PDF objects out of 1000 (max. 8388607)
+ 69 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 361 words of extra memory for PDF output out of 10000 (max. 10000000)
+

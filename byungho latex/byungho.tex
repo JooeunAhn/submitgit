@@ -1,0 +1,1731 @@
+
+%% bare_adv.tex
+%% V1.4b
+%% 2015/08/26
+%% by Michael Shell
+%% See: 
+%% http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the advanced use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.8b or later) with an IEEE Computer
+%% Society journal paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/pkg/ieeetran
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% User assumes all risk.
+%% In no event shall the IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%*************************************************************************
+
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. The IEEE's font choices and paper sizes can   ***
+% *** trigger bugs that do not appear when using other class files.       ***                          ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+% IEEEtran V1.7 and later provides for these CLASSINPUT macros to allow the
+% user to reprogram some IEEEtran.cls defaults if needed. These settings
+% override the internal defaults of IEEEtran.cls regardless of which class
+% options are used. Do not use these unless you have good reason to do so as
+% they can result in nonIEEE compliant documents. User beware. ;)
+%
+%\newcommand{\CLASSINPUTbaselinestretch}{1.0} % baselinestretch
+%\newcommand{\CLASSINPUTinnersidemargin}{1in} % inner side margin
+%\newcommand{\CLASSINPUToutersidemargin}{1in} % outer side margin
+%\newcommand{\CLASSINPUTtoptextmargin}{1in}   % top text margin
+%\newcommand{\CLASSINPUTbottomtextmargin}{1in}% bottom text margin
+
+
+
+
+%
+\documentclass[10pt,journal,compsoc]{IEEEtran}
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[10pt,journal,compsoc]{../sty/IEEEtran}
+
+
+% For Computer Society journals, IEEEtran defaults to the use of 
+% Palatino/Palladio as is done in IEEE Computer Society journals.
+% To go back to Times Roman, you can use this code:
+%\renewcommand{\rmdefault}{ptm}\selectfont
+
+
+
+
+
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+
+
+
+% *** MISC UTILITY PACKAGES ***
+\usepackage{fancyvrb,enumerate}
+\usepackage[pdftex]{graphicx}
+\usepackage{here}
+\usepackage{caption}
+\usepackage{booktabs}
+\usepackage{booktabs,siunitx,amsmath}
+
+
+%
+%\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+% The latest version of ifpdf.sty can be obtained from:
+% http://www.ctan.org/pkg/ifpdf
+% Also, note that IEEEtran.cls V1.7 and later provides a builtin
+% \ifCLASSINFOpdf conditional that works the same way.
+% When switching from latex to pdflatex and vice-versa, the compiler may
+% have to be run twice to clear warning/error messages.
+
+
+
+
+% *** CITATION PACKAGES ***
+%
+\ifCLASSOPTIONcompsoc
+  % The IEEE Computer Society needs nocompress option
+  % requires cite.sty v4.0 or later (November 2003)
+  \usepackage[nocompress]{cite}
+\else
+  % normal IEEE
+  \usepackage{cite}
+
+\fi
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite{} output to follow that of the IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off
+% such as if a citation ever needs to be enclosed in parenthesis.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 5.0 (2009-03-20) and later if using hyperref.sty.
+% The latest version can be obtained at:
+% http://www.ctan.org/pkg/cite
+% The documentation is contained in the cite.sty file itself.
+%
+% Note that some packages require special options to format as the Computer
+% Society requires. In particular, Computer Society  papers do not use
+% compressed citation ranges as is done in typical IEEE papers
+% (e.g., [1]-[4]). Instead, they list every citation separately in order
+% (e.g., [1], [2], [3], [4]). To get the latter we need to load the cite
+% package with the nocompress option which is supported by cite.sty v4.0
+% and later.
+
+
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+  % \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation
+% can be obtained at: 
+% http://www.ctan.org/pkg/graphicx
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found at:
+% http://www.ctan.org/pkg/epslatex
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). The IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+
+% *** MATH PACKAGES ***
+%
+%\usepackage{amsmath}
+% A popular package from the American Mathematical Society that provides
+% many useful and powerful commands for dealing with mathematics.
+%
+% Note that the amsmath package sets \interdisplaylinepenalty to 10000
+% thus preventing page breaks from occurring within multiline equations. Use:
+%\interdisplaylinepenalty=2500
+% after loading amsmath to restore such page breaks as IEEEtran.cls normally
+% does. amsmath.sty is already installed on most LaTeX systems. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/pkg/amsmath
+
+
+
+
+
+% *** SPECIALIZED LIST PACKAGES ***
+%\usepackage{acronym}
+% acronym.sty was written by Tobias Oetiker. This package provides tools for
+% managing documents with large numbers of acronyms. (You don't *have* to
+% use this package - unless you have a lot of acronyms, you may feel that
+% such package management of them is bit of an overkill.)
+% Do note that the acronym environment (which lists acronyms) will have a
+% problem when used under IEEEtran.cls because acronym.sty relies on the
+% description list environment - which IEEEtran.cls has customized for
+% producing IEEE style lists. A workaround is to declared the longest
+% label width via the IEEEtran.cls \IEEEiedlistdecl global control:
+%
+% \renewcommand{\IEEEiedlistdecl}{\IEEEsetlabelwidth{SONET}}
+% \begin{acronym}
+%
+% \end{acronym}
+% \renewcommand{\IEEEiedlistdecl}{\relax}% remember to reset \IEEEiedlistdecl
+%
+% instead of using the acronym environment's optional argument.
+% The latest version and documentation can be obtained at:
+% http://www.ctan.org/pkg/acronym
+
+
+%\usepackage{algorithmic}
+% algorithmic.sty was written by Peter Williams and Rogerio Brito.
+% This package provides an algorithmic environment fo describing algorithms.
+% You can use the algorithmic environment in-text or within a figure
+% environment to provide for a floating algorithm. Do NOT use the algorithm
+% floating environment provided by algorithm.sty (by the same authors) or
+% algorithm2e.sty (by Christophe Fiorio) as the IEEE does not use dedicated
+% algorithm float types and packages that provide these will not provide
+% correct IEEE style captions. The latest version and documentation of
+% algorithmic.sty can be obtained at:
+% http://www.ctan.org/pkg/algorithms
+% Also of interest may be the (relatively newer and more customizable)
+% algorithmicx.sty package by Szasz Janos:
+% http://www.ctan.org/pkg/algorithmicx
+
+
+
+
+% *** ALIGNMENT PACKAGES ***
+%
+%\usepackage{array}
+% Frank Mittelbach's and David Carlisle's array.sty patches and improves
+% the standard LaTeX2e array and tabular environments to provide better
+% appearance and additional user controls. As the default LaTeX2e table
+% generation code is lacking to the point of almost being broken with
+% respect to the quality of the end results, all users are strongly
+% advised to use an enhanced (at the very least that provided by array.sty)
+% set of table tools. array.sty is already installed on most systems. The
+% latest version and documentation can be obtained at:
+% http://www.ctan.org/pkg/array
+
+
+%\usepackage{mdwmath}
+%\usepackage{mdwtab}
+% Also highly recommended is Mark Wooding's extremely powerful MDW tools,
+% especially mdwmath.sty and mdwtab.sty which are used to format equations
+% and tables, respectively. The MDWtools set is already installed on most
+% LaTeX systems. The lastest version and documentation is available at:
+% http://www.ctan.org/pkg/mdwtools
+
+
+% IEEEtran contains the IEEEeqnarray family of commands that can be used to
+% generate multiline equations as well as matrices, tables, etc., of high
+% quality.
+
+
+%\usepackage{eqparbox}
+% Also of notable interest is Scott Pakin's eqparbox package for creating
+% (automatically sized) equal width boxes - aka "natural width parboxes".
+% Available at:
+% http://www.ctan.org/pkg/eqparbox
+
+
+
+
+% *** SUBFIGURE PACKAGES ***
+%\ifCLASSOPTIONcompsoc
+%  \usepackage[caption=false,font=footnotesize,labelfont=sf,textfont=sf]{subfig}
+%\else
+%  \usepackage[caption=false,font=footnotesize]{subfig}
+%\fi
+% subfig.sty, written by Steven Douglas Cochran, is the modern replacement
+% for subfigure.sty, the latter of which is no longer maintained and is
+% incompatible with some LaTeX packages including fixltx2e. However,
+% subfig.sty requires and automatically loads Axel Sommerfeldt's caption.sty
+% which will override IEEEtran.cls' handling of captions and this will result
+% in non-IEEE style figure/table captions. To prevent this problem, be sure
+% and invoke subfig.sty's "caption=false" package option (available since
+% subfig.sty version 1.3, 2005/06/28) as this is will preserve IEEEtran.cls
+% handling of captions.
+% Note that the Computer Society format requires a sans serif font rather
+% than the serif font used in traditional IEEE formatting and thus the need
+% to invoke different subfig.sty package options depending on whether
+% compsoc mode has been enabled.
+%
+% The latest version and documentation of subfig.sty can be obtained at:
+% http://www.ctan.org/pkg/subfig
+
+
+
+
+% *** FLOAT PACKAGES ***
+%
+%\usepackage{fixltx2e}
+% fixltx2e, the successor to the earlier fix2col.sty, was written by
+% Frank Mittelbach and David Carlisle. This package corrects a few problems
+% in the LaTeX2e kernel, the most notable of which is that in current
+% LaTeX2e releases, the ordering of single and double column floats is not
+% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
+% single column figure to be placed prior to an earlier doble column
+% figure.
+% Be aware that LaTeX2e kernels dated 2015 and later have fixltx2e.sty's
+% corrections already built into the system in which case a warning will
+% be issued if an attempt is made to load fixltx2e.sty as it is no longer
+% needed.
+% The latest version and documentation can be found at:
+% http://www.ctan.org/pkg/fixltx2e
+
+
+%\usepackage{stfloats}
+% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
+% the ability to do double column floats at the bottom of the page as well
+% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
+% LaTeX2e). It also provides a command:
+%\fnbelowfloat
+% to enable the placement of footnotes below bottom floats (the standard
+% LaTeX2e kernel puts them above bottom floats). This is an invasive package
+% which rewrites many portions of the LaTeX2e float routines. It may not work
+% with other packages that modify the LaTeX2e float routines. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/pkg/stfloats
+% Do not use the stfloats baselinefloat ability as the IEEE does not allow
+% \baselineskip to stretch. Authors submitting work to the IEEE should note
+% that the IEEE rarely uses double column equations and that authors should try
+% to avoid such use. Do not be tempted to use the cuted.sty or midfloat.sty
+% packages (also by Sigitas Tolusis) as the IEEE does not format its papers in
+% such ways.
+% Do not attempt to use stfloats with fixltx2e as they are incompatible.
+% Instead, use Morten Hogholm'a dblfloatfix which combines the features
+% of both fixltx2e and stfloats:
+%
+% \usepackage{dblfloatfix}
+% The latest version can be found at:
+% http://www.ctan.org/pkg/dblfloatfix
+
+
+%\ifCLASSOPTIONcaptionsoff
+%  \usepackage[nomarkers]{endfloat}
+% \let\MYoriglatexcaption\caption
+% \renewcommand{\caption}[2][\relax]{\MYoriglatexcaption[#2]{#2}}
+%\fi
+% endfloat.sty was written by James Darrell McCauley, Jeff Goldberg and 
+% Axel Sommerfeldt. This package may be useful when used in conjunction with 
+% IEEEtran.cls'  captionsoff option. Some IEEE journals/societies require that
+% submissions have lists of figures/tables at the end of the paper and that
+% figures/tables without any captions are placed on a page by themselves at
+% the end of the document. If needed, the draftcls IEEEtran class option or
+% \CLASSINPUTbaselinestretch interface can be used to increase the line
+% spacing as well. Be sure and use the nomarkers option of endfloat to
+% prevent endfloat from "marking" where the figures would have been placed
+% in the text. The two hack lines of code above are a slight modification of
+% that suggested by in the endfloat docs (section 8.4.1) to ensure that
+% the full captions always appear in the list of figures/tables - even if
+% the user used the short optional argument of \caption[]{}.
+% IEEE papers do not typically make use of \caption[]'s optional argument,
+% so this should not be an issue. A similar trick can be used to disable
+% captions of packages such as subfig.sty that lack options to turn off
+% the subcaptions:
+% For subfig.sty:
+% \let\MYorigsubfloat\subfloat
+% \renewcommand{\subfloat}[2][\relax]{\MYorigsubfloat[]{#2}}
+% However, the above trick will not work if both optional arguments of
+% the \subfloat command are used. Furthermore, there needs to be a
+% description of each subfigure *somewhere* and endfloat does not add
+% subfigure captions to its list of figures. Thus, the best approach is to
+% avoid the use of subfigure captions (many IEEE journals avoid them anyway)
+% and instead reference/explain all the subfigures within the main caption.
+% The latest version of endfloat.sty and its documentation can obtained at:
+% http://www.ctan.org/pkg/endfloat
+%
+% The IEEEtran \ifCLASSOPTIONcaptionsoff conditional can also be used
+% later in the document, say, to conditionally put the References on a 
+% page by themselves.
+
+
+
+
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%
+%\usepackage{url}
+% url.sty was written by Donald Arseneau. It provides better support for
+% handling and breaking URLs. url.sty is already installed on most LaTeX
+% systems. The latest version and documentation can be obtained at:
+% http://www.ctan.org/pkg/url
+% Basically, \url{my_url_here}.
+
+
+% NOTE: PDF thumbnail features are not required in IEEE papers
+%       and their use requires extra complexity and work.
+%\ifCLASSINFOpdf
+%  \usepackage[pdftex]{thumbpdf}
+%\else
+%  \usepackage[dvips]{thumbpdf}
+%\fi
+% thumbpdf.sty and its companion Perl utility were written by Heiko Oberdiek.
+% It allows the user a way to produce PDF documents that contain fancy
+% thumbnail images of each of the pages (which tools like acrobat reader can
+% utilize). This is possible even when using dvi->ps->pdf workflow if the
+% correct thumbpdf driver options are used. thumbpdf.sty incorporates the
+% file containing the PDF thumbnail information (filename.tpm is used with
+% dvips, filename.tpt is used with pdftex, where filename is the base name of
+% your tex document) into the final ps or pdf output document. An external
+% utility, the thumbpdf *Perl script* is needed to make these .tpm or .tpt
+% thumbnail files from a .ps or .pdf version of the document (which obviously
+% does not yet contain pdf thumbnails). Thus, one does a:
+% 
+% thumbpdf filename.pdf 
+%
+% to make a filename.tpt, and:
+%
+% thumbpdf --mode dvips filename.ps
+%
+% to make a filename.tpm which will then be loaded into the document by
+% thumbpdf.sty the NEXT time the document is compiled (by pdflatex or
+% latex->dvips->ps2pdf). Users must be careful to regenerate the .tpt and/or
+% .tpm files if the main document changes and then to recompile the
+% document to incorporate the revised thumbnails to ensure that thumbnails
+% match the actual pages. It is easy to forget to do this!
+% 
+% Unix systems come with a Perl interpreter. However, MS Windows users
+% will usually have to install a Perl interpreter so that the thumbpdf
+% script can be run. The Ghostscript PS/PDF interpreter is also required.
+% See the thumbpdf docs for details. The latest version and documentation
+% can be obtained at.
+% http://www.ctan.org/pkg/thumbpdf
+
+
+% NOTE: PDF hyperlink and bookmark features are not required in IEEE
+%       papers and their use requires extra complexity and work.
+% *** IF USING HYPERREF BE SURE AND CHANGE THE EXAMPLE PDF ***
+% *** TITLE/SUBJECT/AUTHOR/KEYWORDS INFO BELOW!!           ***
+\newcommand\MYhyperrefoptions{bookmarks=false,bookmarksnumbered=false,
+pdfpagemode={UseOutlines},plainpages=false,pdfpagelabels=true,
+colorlinks=true,linkcolor={black},citecolor={black},urlcolor={black},
+pdftitle={},%<!CHANGE!
+pdfsubject={},%<!CHANGE!
+pdfauthor={},%<!CHANGE!
+pdfkeywords={}}%<^!CHANGE!
+%\ifCLASSINFOpdf
+%\usepackage[\MYhyperrefoptions,pdftex]{hyperref}
+%\else
+%\usepackage[\MYhyperrefoptions,breaklinks=true,dvips]{hyperref}
+%\usepackage{breakurl}
+%\fi
+% One significant drawback of using hyperref under DVI output is that the
+% LaTeX compiler cannot break URLs across lines or pages as can be done
+% under pdfLaTeX's PDF output via the hyperref pdftex driver. This is
+% probably the single most important capability distinction between the
+% DVI and PDF output. Perhaps surprisingly, all the other PDF features
+% (PDF bookmarks, thumbnails, etc.) can be preserved in
+% .tex->.dvi->.ps->.pdf workflow if the respective packages/scripts are
+% loaded/invoked with the correct driver options (dvips, etc.). 
+% As most IEEE papers use URLs sparingly (mainly in the references), this
+% may not be as big an issue as with other publications.
+%
+% That said, Vilar Camara Neto created his breakurl.sty package which
+% permits hyperref to easily break URLs even in dvi mode.
+% Note that breakurl, unlike most other packages, must be loaded
+% AFTER hyperref. The latest version of breakurl and its documentation can
+% be obtained at:
+% http://www.ctan.org/pkg/breakurl
+% breakurl.sty is not for use under pdflatex pdf mode.
+%
+% The advanced features offer by hyperref.sty are not required for IEEE
+% submission, so users should weigh these features against the added
+% complexity of use.
+% The package options above demonstrate how to enable PDF bookmarks
+% (a type of table of contents viewable in Acrobat Reader) as well as
+% PDF document information (title, subject, author and keywords) that is
+% viewable in Acrobat reader's Document_Properties menu. PDF document
+% information is also used extensively to automate the cataloging of PDF
+% documents. The above set of options ensures that hyperlinks will not be
+% colored in the text and thus will not be visible in the printed page,
+% but will be active on "mouse over". USING COLORS OR OTHER HIGHLIGHTING
+% OF HYPERLINKS CAN RESULT IN DOCUMENT REJECTION BY THE IEEE, especially if
+% these appear on the "printed" page. IF IN DOUBT, ASK THE RELEVANT
+% SUBMISSION EDITOR. You may need to add the option hypertexnames=false if
+% you used duplicate equation numbers, etc., but this should not be needed
+% in normal IEEE work.
+% The latest version of hyperref and its documentation can be obtained at:
+% http://www.ctan.org/pkg/hyperref
+
+
+
+
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+% (Unless specifically asked to do so by the journal or conference you plan
+% to submit to, of course. )
+
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+
+
+
+% paper title
+% Titles are generally capitalized except for words such as a, an, and, as,
+% at, but, by, for, in, nor, of, on, or, the, to and up, which are usually
+% not capitalized unless they are the first or last word of the title.
+% Linebreaks \\ can be used within to get better formatting as desired.
+% Do not put math or special symbols in the title.
+%
+%
+% author names and IEEE memberships
+% note positions of commas and nonbreaking spaces ( ~ ) LaTeX will not break
+% a structure at a ~ so this keeps an author's name from being broken across
+% two lines.
+% use \thanks{} to gain access to the first footnote area
+% a separate \thanks must be used for each paragraph as LaTeX2e's \thanks
+% was not built to handle multiple paragraphs
+%
+%
+%\IEEEcompsocitemizethanks is a special \thanks that produces the bulleted
+% lists the Computer Society journals use for "first footnote" author
+% affiliations. Use \IEEEcompsocthanksitem which works much like \item
+% for each affiliation group. When not in compsoc mode,
+% \IEEEcompsocitemizethanks becomes like \thanks and
+% \IEEEcompsocthanksitem becomes a line break with idention. This
+% facilitates dual compilation, although admittedly the differences in the
+% desired content of \author between the different types of papers makes a
+% one-size-fits-all approach a daunting prospect. For instance, compsoc 
+% journal papers have the author affiliations above the "Manuscript
+% received ..."  text while in non-compsoc journals this is reversed. Sigh.
+
+
+\begin{document}
+\title{Assignment Submission System Using Git}
+
+\author{ByungHo Lee,~\IEEEmembership{}
+        HyeonTaek Kong,~\IEEEmembership{}
+        JooEun Ahn~\IEEEmembership{}}% <-this % stops a space
+% note need leading \protect in front of \\ to get a newline within \thanks as
+% \\ is fragile and will error, could use \hfil\break instead.
+
+% <-this % stops a space
+
+
+% note the % following the last \IEEEmembership and also \thanks - 
+% these prevent an unwanted space from occurring between the last author name
+% and the end of the author line. i.e., if you had this:
+% 
+% \author{....lastname \thanks{...} \thanks{...} }
+%                     ^------------^------------^----Do not want these spaces!
+%
+% a space would be appended to the last name and could cause every name on that
+% line to be shifted left slightly. This is one of those "LaTeX things". For
+% instance, "\textbf{A} \textbf{B}" will typeset as "A B" not "AB". To get
+% "AB" then you have to do: "\textbf{A}\textbf{B}"
+% \thanks is no different in this regard, so shield the last } of each \thanks
+% that ends a line with a % and do not let a space in before the next \thanks.
+% Spaces after \IEEEmembership other than the last one are OK (and needed) as
+% you are supposed to have spaces between the names. For what it is worth,
+% this is a minor point as most people would not even notice if the said evil
+% space somehow managed to creep in.
+
+
+
+% The paper headers
+% The only time the second header will appear is for the odd numbered pages
+% after the title page when using the twoside option.
+% 
+% *** Note that you probably will NOT want to include the author's ***
+% *** name in the headers of peer review papers.                   ***
+% You can use \ifCLASSOPTIONpeerreview for conditional compilation here if
+% you desire.
+
+
+
+% The publisher's ID mark at the bottom of the page is less important with
+% Computer Society journal papers as those publications place the marks
+% outside of the main text columns and, therefore, unlike regular IEEE
+% journals, the available text space is not reduced by their presence.
+% If you want to put a publisher's ID mark on the page you can do it like
+% this:
+%\IEEEpubid{0000--0000/00\
+
+
+% or like this to get the Computer Society new two part style.
+%\IEEEpubid{\makebox[\columnwidth]{\hfill 0000--0000/00/\$00.00~\copyright~2015 IEEE}%
+%\hspace{\columnsep}\makebox[\columnwidth]{Published by the IEEE Computer Society\hfill}}
+% Remember, if you use this you must call \IEEEpubidadjcol in the second
+% column for its text to clear the IEEEpubid mark (Computer Society journal
+% papers don't need this extra clearance.)
+
+
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+
+
+% for Computer Society papers, we must declare the abstract and index terms
+% PRIOR to the title within the \IEEEtitleabstractindextext IEEEtran
+% command as these need to go into the title area created by \maketitle.
+% As a general rule, do not put math, special symbols or citations
+% in the abstract or keywords.
+\IEEEtitleabstractindextext{%
+\begin{abstract}Git is considered as one of the most famous version managing tools and getting used to those tool is essential in software development process. if the assignment submission system supports git, it is a good chance for undergraduates to experience and learn git. Prominent Universities overseas have already implemented git for assignment submission system. So, our web application will include the functions that help the professor to manage assignments and the students to easily submit assignments using git. Conclusively, our web application will have a good influence on the students and professors of Hanyang University.
+\end{abstract}
+
+% Note that keywords are not normally used for peerreview papers.
+\begin{IEEEkeywords}
+git, assignment, submission system, web application
+\end{IEEEkeywords}}
+
+
+% make the title area
+\maketitle
+
+% To allow for easy dual compilation without having to reenter the
+% abstract/keywords data, the \IEEEtitleabstractindextext text will
+% not be used in maketitle, but will appear (i.e., to be "transported")
+% here as \IEEEdisplaynontitleabstractindextext when compsoc mode
+% is not selected <OR> if conference mode is selected - because compsoc
+% conference papers position the abstract like regular (non-compsoc)
+% papers do!
+\IEEEdisplaynontitleabstractindextext
+% \IEEEdisplaynontitleabstractindextext has no effect when using
+% compsoc under a non-conference mode.
+
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+
+\ifCLASSOPTIONcompsoc
+\IEEEraisesectionheading{\section{Introduction}\label{sec:introduction}}
+\else
+\section{Introduction}
+\label{sec:introduction}
+\fi
+% Computer Society journal (but not conference!) papers do something unusual
+% with the very first section heading (almost always called "Introduction").
+% They place it ABOVE the main text! IEEEtran.cls does not automatically do
+% this for you, but you can achieve this effect with the provided
+% \IEEEraisesectionheading{} command. Note the need to keep any \label that
+% is to refer to the section immediately after \section in the above as
+% \IEEEraisesectionheading puts \section within a raised box.
+
+
+
+
+% The very first letter is a 2 line initial drop letter followed
+% by the rest of the first word in caps (small caps for compsoc).
+% 
+% form to use if the first word consists of a single letter:
+% \IEEEPARstart{A}{demo} file is ....
+% 
+% form to use if you need the single drop letter followed by
+% normal text (unknown if ever used by the IEEE):
+% \IEEEPARstart{A}{}demo file is ....
+% 
+% Some journals put the first two words in caps:
+% \IEEEPARstart{T}{his demo} file is ....
+% 
+% Here we have the typical use of a "T" for an initial drop letter
+% and "HIS" in caps to complete the first word.
+\IEEEPARstart{O}{ur} team project theme is to utilize git for effective class assignments submission and supervision for department of Information System, Hanyang Univ. professors, teaching assistants and undergraduate students. What motivated us was that throughout last 3 years in school, especially taking classes including invitation to computer science, operating system, data structure etc, our team members found out several drawbacks in class assignments submission system. Most of the professors tend to prefer hand written assignment rather than online submission via Hanyang portal. The reason why is that hand written assignments are only partially effective for preventing copying other students' assignments. Professors may have already realized; however, hand writing submission system is just a temporary method which does not fit perfectly for professor's purpose, plus it is a big burden for students and teaching assistants. So, our team suggests new online assignment submission system utilizing 'git' for all members of department of Information System. What we mainly expect from our software project is that first of all, since 'git' is one of the most famous version managing tools and getting used to those tools is essential in software development process, it is a good chance for undergraduates to experience and learn 'git'. Prominent Universities overseas have already implemented git for assignment submission system. we would like to add special functions like assignment tracking and auto-testing. Students specify proper branches and those branches will be registered on the main server. Then worker consistently import information from branches to the main server. Based on the imported information, professors are able to monitor assignment submission status and process of all students at a time. this web application will make the assignment submission process much easier.\\
+% You must have at least 2 lines in the paragraph with the drop letter
+% (should never be an issue)
+
+\hfill 
+ 
+\hfill 
+
+\IEEEpeerreviewmaketitle
+
+\ifCLASSOPTIONcompsoc
+\IEEEraisesectionheading{\section{Requirement}\label{sec:Requirement}}
+\else
+\section{Requirement}
+\label{sec:Requirement}
+\fi
+
+Our team members come up with total 4 requirements for this web application. All functions should provide CRUD(create, read, update, delete) functions.
+
+\subsection{User-friendly program}
+Our assignment submission application must be easy-to-use. Because our team concentrate on getting more efficiency on managing assignments than original process. 
+
+\subsection{Function to manage accounts}
+Students and professors will have different registration process.
+
+\subsubsection{Student registration}
+All students need a github account for registration. The system gets authentication token from github and students who registered will assigned to add their personal information such as Hanyang University email address and their student number. Only who verified their Hanyang University email will be able to use this service.
+\subsubsection{Professor registration}
+Professors does not need a github account for registration. They only need Hanyang University email address. For registration, the system manager or other professors can approve a user as a professor.
+
+\subsection{Function to manage courses and assignments for professors}
+One of the main function of our web application is that professors can easily manage assignment for their students. There are some specific requirements for this function.
+
+\subsubsection{Course registration}
+The professor can register courses. Inside course register page, the professor may fill in the title of the course for students to enable searching and short description.
+
+\subsubsection{Assignment registration}
+The professor can assign assignments to those who register the course. Details are shown below. \\\\
+\null\qquad Title: The professor can set a title for an asssignment. As students will be able to register their github repository for each assignment, the redundancy of assignments could be handled.\\\\
+\null\qquad Description: The professor can fill out description of the assignment. Multiple files can be uploaded.\\\\
+\null\qquad Period setting: The professor can set a deadline for an assignment. When the assignment deadline is over, an email would be sent for professor which includes the statistical data about who did or didn’t completed the assignment.\\\\
+\null\qquad Auto-Testing: The professor can activate auto-testing function to assignment. This function requires test standard input and output results. If this function is activated, the professor need to fill in test inputs and outputs for the assignment or upload a sample file filled with test inputs and outputs. Only the assignment that pass the test can be submitted.
+\subsubsection	{Assignment lookup} 
+The professor can ordinarily check who have submitted and passed the test for an assignment
+
+\subsection{Function to submit assignments for students}
+The students easily submit their assignment to their professors. There are some specific requirements for this function.
+
+
+\subsubsection{Course search}
+Users can search the course with the title that professor registered. Users also can put the course into ‘my course’ to easily access for that course
+
+\subsubsection{Github repository registration}
+Users can register their remote repository to server which is related to courses. One and different repository for each course.
+
+\subsubsection{Auto-submission}
+
+Students can submit their assignment only by pusing their code to remote repository which is registered. The cron system on our server will repeatedly check assignments in students’ remote repository every hour. If the assignment exists and passes several tests, the submission will be completed and register to the list of student who complete assignment.
+
+
+\subsubsection{Manual submission}
+
+There is a defect in auto-submission system if a student doesn’t have enough time for waiting as the system checks student’s repository every hour. If a student wants manual testing, the student has to push code into his github repository and click the test button. Then, the service would fetch from his github repository which is related to course and test for test inputs and make the result.\\\\\\
+
+
+\begin{table}[!t] 
+\renewcommand{\arraystretch}{1.3} 
+\caption{Team roles} 
+\label{Table1} 
+\centering 
+\begin{tabular}{ccc} 
+	\toprule
+
+	Role & Name\\
+
+	\midrule
+
+	User & ByungHo Lee\\
+
+	Customer & ByungHo Lee\\
+
+	Software Developer &	HyeonTaek Kong\\
+
+	Development Manager & JooEun Ahn\\
+
+	\bottomrule
+
+  \end{tabular} 
+\end{table} 
+
+
+\ifCLASSOPTIONcompsoc
+\IEEEraisesectionheading{\section{Development Environment}\label{sec:Development Environment}}
+\else
+\section{Development Environment\\t}
+\label{sec:Development Environment\\}
+\fi
+
+\subsection{Choice of software development platform\\}
+
+\subsubsection{Softtware Platform Choice and Why}
+We develop our software on Web, because it provides the best environment for assignment submission for students.
+\subsection{Programming Language and Development Environment Choice and Why\\}\subsubsection{Angular4\\}
+
+Angular4 is a javascript framework developed by google. Its base is typescript and recently it is widely used in web front development. It is also used in application development because angular 4 is able to provide same user interface.\\
+
+\null\qquad a)TypeScript Has Great Tools: The biggest selling point of TypeScript is tooling. It provides advanced auto-completion, navigation, and refactoring. Having such tools is almost a requirement for large projects. Without them the fear changing the code puts the code base in a semi-read-only state, and makes large-scale refactorings very risky and costly. TypeScript is not the only typed language that compiles to JavaScript. There are other languages with stronger type systems that in theory can provide absolutely phenomenal tooling. But in practice most of them do not have anything other than a compiler. This is because building rich dev tools has to be an explicit goal from day one, which it has been for the TypeScript team. That is why they built language services that can be used by editors to provide type checking and auto-completion. If you have wondered why there are so many editors with great TypeScript supports, the answer is the language services. The fact that intellisense and basic refactorings are reliable makes a huge impact on the process of writing and especially refactoring code. Although it is hard to measure, I feel that the refactorings that would have taken a few days before now can be done in less than a day. While TypeScript greatly improves the code editing experience, it makes the dev setup more complex, especially comparing to dropping an ES5 script on a page. In addition, you cannot use tools analyzing JavaScript source code (e.g., JSHint), but there are usually adequate replacements.\\
+
+\null\qquad b)TypeScript is a Superset of Javascript: Since TypeScript is a superset of JavaScript, you don’t need to go through a big rewrite to migrate to it. You can do it gradually, one module at a time. Just pick a module, rename the .js files into .ts, then incrementally add type annotations. When you are done with this module, pick the next one. Once the whole code base is typed, you can start tweaking the compiler settings to make it more strict. This process can take some time, but it was not a big problem for Angular, when we were migrating to TypeScript. Doing it gradually allowed us to keep developing new functionality and fixing bugs during the transition.\\
+
+\null\qquad c)TypeScript Makes Abstractions Explicit: A good design is all about well-defined interfaces. And it is much easier to express the idea of an interface in a language that supports them. For instance, imagine a book-selling application where a purchase can be made by either a registered user through the UI or by an external system through some sort of an API.
+
+\subsubsection{Docker}
+Docker works as a virtual machine and it supplements any weakness of current virtual machine. It takes less time and space because it shares operating system and kernel. Taking images from server, user can use anywhere if they have installed Docker. We will try to synchronize development environment and actual service to eliminate “works on my machine” problems when collaborating on code.
+
+\subsubsection{Django}
+Django is high level python based web framework free, open source so that widely used easy to learn so that development cost is low. Also, Django was designed to help developers take applications from concept to completion as quickly as possible. Django takes security seriously and helps developers avoid many common security mistakes. Some of the busiest sites on the Web leverage Django’s ability to quickly and flexibly scale.
+
+\subsubsection{MySql}
+It is comparably cheap for commercial use. It creates little overhead because it does not matter server performance. Mysql also shows good compatibility with Oracle DB. So any error can be fixed in a short time because it is widely used DBMS and has many references. 
+
+\subsubsection{Cloud Platform}
+a)AWS EC2: EC2 works as a server.\\
+b)AWS Route53: Route53 is used to set up our domain(hyuis.xyz) name server.\\
+c)AWS RDS: RDS is a kind of database used in server.\\
+d)AWS Elastic Load Balancer: Elastic Load Balancer is used for auto-scaling.\\
+e)AWS Elastic Beanstalk: We will utilize elastic beanstalk to integrate and to manage other cloud platforms.\\
+
+\subsection{Cost Estimation}
+AWS costs \$7 a month and RDS(Aurora DB) costs \$29 a month. In total, it approximately costs \$40.
+
+\subsection{Similar Software in Use\\}
+\subsubsection{Baekjoon Coding} 
+www.acmicpc.net is also known as baekjoon coding provides similar function with our web. The purpose of this website is to suggest many code testing problems and users solve them by programming proper codes. Our team got the motivation from this website function “code testing“. Until now, Hanyang-In portal assignment board did not provide suitable code testing function for computer engineering undergraduates. Students just uploaded their codes and professors or teaching assistants should have runned them one by one. In that sense, our assignment submission system using Github will be a good chance not only for students but also for Professors and TA.
+
+\subsubsection{Docker Hub} 
+Docker hub is similar to our web in the sense of linking Github repository. Our original plan was to make students type their own repository URL, but it might cause abuse of other person’s public repository. So we decided to make students select after searching their repositories. 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{"docker1".png}
+{\caption*{Example of Docker1}}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{"docker2".png}
+{\caption*{Exmaple of Docker 2}}
+\end{figure}
+
+\clearpage
+\ifCLASSOPTIONcompsoc
+\IEEEraisesectionheading{\section{Specifications}\label{sec:Specifications}}
+\else
+\section{Specifications}
+\label{sec:Specifications}
+\fi
+\subsection{Interaction Overview}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{"Interaction overview".png}
+{\caption*{Interaction overview}}
+\end{figure}
+
+\subsubsection{From Professors to Web}
+Professors first need to verify himself with hanyang email account. First time they try to sign up for our web, our web automatically sends verification email to professors so that they can prove themselves. After they log into our web, they can create lectures they teach so that students who take the course can register to conduct assignments. Course information may include title content, semester, title, content and test input and output and deadline. Professors can manage assignments by checking students’ repository url and see if their source code passed test input and output.
+\subsubsection{From Web to Students} 
+On our web students can get information for course details and assignment details. First students as well need to verify themselves via hanyang email and register courses they take among lectures professors created. 
+\subsubsection{From Students to Github.com} 
+Students create their own repository and repository url then they can submit repository url on our web later on for assignment submission. Students write their source codes that can pass test input and output.
+\subsubsection{From Github.com to Web}
+Github provides students source code through each repository url. Since the main purpose of our software program is to give chance for students using github for assignment submission, it is expected that students are acclimatized with utilizing github which is essential for developers. 
+
+\subsection {Database Flowchart}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{"Database FlowChart".png}
+{\caption*{Database Flowchart}}
+\end{figure}
+From back server to front our web there are several information to bring – user information, course information, assignment information and submission information. User information may include each student and professor identification and Hanyang email for verification. After student or professor signs up to our Web, the user data consist of id and password put and built up in our database. By doing this, when a user log in to our web, the set of id and password is on it or not. If the set of id and password are correctly matched the user can access successfully. 
+
+\subsubsection{User Information}
+User information definitely includes ID, password and email. Our web is not a open server because only authorized professors and students should have access to each lecture they give or take. Those authorization will be checked via hanyang email and will be monitored by managers. 
+
+\subsubsection{Customer Information} 
+Course information contains title and summary of course. The course should indicate semester, professor and any details like classroom number and time. 
+
+\subsubsection{Assignment Information}
+Main target of our web is professors and students in computer engineering major or any other related major. Therefore, most of assignments would contain code testing. Assignment information has files, contents, test input/output and deadlines. Professors should suggest a problem and expected input and output so that students can find the solution and test their codes.
+
+\subsection {User Interface\\}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{"User Interface".png}
+{\caption*{User Interface}}
+\end{figure}
+
+Both students and professor login verifying their Hanyang email and they will have different interface. Professors can create course which contains course details such as semester, course title and summary of course. Then they can create assignments on each course which contains assignment details such as title, content, deadline, file and test input/output. Lastly, professors can manage assignments by looking at students Github repository URL and they can see if which students passed assignments test input and output with students’ code. Professors will get email in the end showing results of submitted assignments. After students verify themselves using Hanyang email, they search lectures and register them. Then they can find assignments professors uploaded. After that, when assignments are on the board, students link Github repository URL to the course and they conduct assignment at github.com. After the assignment is submitted students can check whether they passed test or not according to professors’ test input/output.
+
+\subsubsection {Professor Interface}
+\qquad a)Create Course: Professors create lecture course so that students can register course they take. Professors can create multiple courses they teach.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\textwidth]{"Create Course".png}
+{\caption*{Overview of how to create course}}
+\end{figure}
+
+\qquad b)Create Assignment: Professors can create various assignments on each lecture course they created. If they uploaded assignment with test input and output, students need to submit proper codes to get according result
+.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\textwidth]{"Create Assignment".png}
+{\caption*{Overview of how to create Assignment}}
+\end{figure}
+c)Assignment Management: Professors can manage assignments through our web. They can take a good look at assignment submission status and test result of students’ code. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\textwidth]{"Assignment Management".png}
+{\caption*{Overview of how to manage Assignment}}
+\end{figure}
+
+\subsubsection{Student Interface}
+a)Course Search and Register: Students search any course they take among the lecture courses professors created. They can add multiple lectures into their profile. Only granted students can register courses so that they can browse assignments created. Once they register courses, they can find those anytime they log into our web.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\textwidth]{"Course Registration".png}
+{\caption*{Overview of how to register course}}
+\end{figure}
+
+b)Link Course: Professors can manage assignments through our web. They can take a good look at assignment submission status and test result of students’ code.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{"Link Course".png}
+{\caption*{Overview of how to link course}}
+\end{figure}
+c)Assignment Submission and Check: Students do not submit their assignments on our web. However, they submit assignments on github repository and submit the Url. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{"Assignment Submission and Check".png}
+{\caption*{Overview of how to submit and check assignment}}
+\end{figure}
+\bigskip
+\bigskip
+
+\ifCLASSOPTIONcompsoc
+\IEEEraisesectionheading{\section{DESIGN AND IMPLEMENTATION}\label{sec:DESIGN AND IMPLEMENTATION}}
+\else
+\section{DESIGN AND IMPLEMENTATION}
+\label{sec:DESIGN AND IMPLEMENTATION}
+\fi
+
+\subsection{Interaction Overview}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{"Design Interaction".png}
+{\caption*{Pictrue 12: Overview of Interaction}}
+\end{figure}
+Users access to our web through front-end application comprised of Angular. When users send http requests through front-end, those requests are sent to back-end and reply corresponding response. In the response, many kinds of data might be included and since our team implemented REST API using json data type, the response should include data in json data type accordingly. Front-end conduct page rendering based on the response with json data. 
+\subsection{Overall Design}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{"Django Overall Design".png}
+{\caption*{Diagram of Overall Design}}
+\end{figure}
+I just explained detailed front-end web view flow about how it works. This part is for explaining the detail workflow of whole service.
+
+\subsubsection{Frontend}
+Angular4 and Amazon S3 Bucket Static Hosting
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\textwidth]{"Amazon Bucket".png}
+{\caption*{Amazon Bucket}}
+\end{figure}
+Our service uses angular, we need to serve JavaScript files and a HTML file. For stability and maintenance of the service, we chose static hosting function of AWS S3. We created a bucket for front-end application. We set property as ‘Static website hosting’ and we also set permissions for users.
+
+\subsubsection{Frontend-to-Backend: Route 53}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{"Route 53".png}
+{\caption*{Picture of Route 53}}
+\end{figure}
+Route53 connects IP address to domain name server. Simply, it makes possible to show what happens at the back on the front. It not only helps to register domain names it also routes server traffic to the resources of our domain. We route our service to AWS EB that contains servers.
+
+\subsubsection{Backend}
+\null\qquad a)Elastic Beanstalk(EB)
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{"Elastic beanstalk".png}
+{\caption*{Picture of Elastic Beanstalk}}
+\end{figure}
+AWS Elastic Beanstalk takes control of whole part in dotted line. It has authority to initiate and halt the service. AWS Elastic Beanstalk is the fastest and simplest way to get an application up and running on AWS. We can simply deploy application and the service automatically handles all the details such as resource provisioning, load balancing, auto-scaling, and monitoring. Elastic Beanstalk enables auto-scaling by Elastic Load Balancer to easily support highly variable amounts of traffic.
+
+\null\qquad b)	Load Balancing and Auto-scaling
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\textwidth]{"Load Balancing".png}
+{\caption*{Picture of Load Balancing}}
+\end{figure}
+Load balancing is an essential function when there are variable requests from clients. If a single Amazon EC2 server cannot handle all the requests, Elastic Load Balancer helps you ensure that you have the enough number of Amazon EC2 instances available to handle the load for our server. It creates collections of EC2 instances, called auto-scaling groups. We can specify the minimum number of instances in each Auto Scaling group, and Auto Scaling ensures that our group never goes below this size. 
+
+\null\qquad c)	Amazon EC2 Server using Django and Django 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\textwidth]{"EC2 Server".png}
+{\caption*{Picture of EC2 Server}}
+\end{figure}
+
+Django is a web framework constructed by Python language. As we used angular for our front-end app, there is a need to transfer data between back-end server and front-end application. We chose Representational State Transfer(REST) API to enable it. REST API allow requesting systems to access and manipulate textual representations of web resources using a uniform and predefined set of stateless operations. The server response any information that client requested by json type.
+
+\null\qquad d)	Docker
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\textwidth]{"Docker".png}
+{\caption*{Picture of Docker}}
+\end{figure}
+As we use auto-scaling for our stability and expandability of our service, there has to be some kind of program that build and deploy our application made by Django as ELB does not handle it automatically. It only increases and decreases the number of servers. We chose Docker. Docker is a software container platform that has a lot of advantages. As it has something in common with virtual machine, though it overcame disadvantages from it, it has a high compatibility which means that it escapes the app dependency matrix.
+
+\null\qquad e)	Amazon S3 bucket Django Static Backends 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\textwidth]{"Amazon S3 bucket Django Static Backends".png}
+{\caption*{Picture of Amazon S3 bucket and Django Static Backends }}
+\end{figure}
+We chose AWS S3 to provide static files for the service. Django Static Back-ends is the place to save images uploaded by developers. It is linked to Amazon EC2 server and provides static files when they are called.
+
+
+\null\qquad 	f)Kronos and Rabbit MQ
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\textwidth]{"Overview of Kronos and Rabbit".png}
+{\caption*{Overview of Kronos and Rabbit}}
+\end{figure}
+EC2 brings submitted codes from student repositories of Github to main server and produce lists of queue to Rabbit MQ. The role of Kronos is to do its fetching job automatically and periodically.\\
+\null\qquad Rabbit MQ basically uses round-robin algorithm. We added ‘prefetch’ option to ensure the produced queue in list is deleted only after its grading and testing is completed. The grading server will notify that it has finished grading and it will be removed 
+
+\null\qquad g)Amazon RDS
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\textwidth]{"Picture of Amazon RDS.png}
+{\caption*{Picture of Amazon RDS}}
+\end{figure}
+Amazon Relational Database Service (Amazon RDS) is a web service that makes it easier to set up, operate, and scale a relational database in the cloud. It provides cost-efficient, resizable capacity for an industry-standard relational database and manages common database administration tasks. When you buy a server, you get CPU, memory, storage, and IOPS, all bundled together. With Amazon RDS, these are split apart so that you can scale them independently. So, for example, if you need more CPU, less IOPS, or more storage, you can easily allocate them. Amazon RDS manages backups, software patching, automatic failure detection, and recovery. In order to deliver a managed service experience, Amazon RDS does not provide shell access to DB instances, and it restricts access to certain system procedures and tables that require advanced privileges. You can have automated backups performed when you need them, or create your own backup snapshot. These backups can be used to restore a database, and the Amazon RDS restore process works reliably and efficiently. You can get high availability with a primary instance and a synchronous secondary instance that you can failover to when problems occur. In addition to the security in your database package, you can help control who can access your RDS databases by using AWS IAM to define users and permissions. You can also help protect your databases by putting them in a virtual private cloud. In our server, Amazon Relational Database Service saves the mark result of students’ code and saves the code itself.\\
+\null\qquad We made a route with server that takes assignment code from each student’s Github repository to store. It interacts with worker connected to grading server and Kronos EC2 which brings code by read-only method from github students’ repository regularly.
+
+
+
+\null\qquad 	h)Workers, Node and Amazon EC2
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\textwidth]{"Overview of Workers, Node and Amazon EC2".png}
+{\caption*{Overview of Workers, Node and Amazon EC2}}
+\end{figure}
+This part is about grading servers. Worker is connected to a grading server and it consumes queue entities from Rabbit MQ. Server takes codes from each worker in order and this code is compiled and run on Docker. From our result from testing demos, a single server can handle up to 10 Dockers at a time. It means that a single grading server can handle approximately 10 workers once at a time. If there are one hundred students and they submitted one hundred different coding assignments, 10 workers bring the code from the RDS server as they consume the list from Rabbit MQ then, deploy the codes to 10 Amazon EC2 servers. What Docker does in grading server is that it deploys CompileBox and compiles codes that workers gave. After grading is completed, it destroys the Docker. CompileBox is a Docker based sandbox to run untrusted code and return the output to your app. It can compile 15 languages. The reason why we use Docker is to ensure that the system test the code in an isolated environment. This way we do not have to worry about untrusted code possibly damaging our server intentionally or unintentionally. We can use this system to allow student to compile their code right.
+
+\subsection{Implementation}
+\subsubsection{Front-end Angular App Implementation}
+\null\qquad a) Modularization
+As we used Angular for front-end development, it is common that all the working set is divided by component.
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[height = 0.4\textheight,width=0.4\textwidth]{"Overview of Folders".png}
+{\caption*{Overview of Folders}}
+\end{figure}
+Each folder represents single component. The hierarchy of folder also represents hierarchy of component. Each component contains different and essential functions to render the pages user requested.
+
+\null\qquad 	b)Guard
+Guard prevents users from using unintentional work such as registering course before login and sign up. There are two guards in our service, auth and profile guard. Guards work whenever user routes to server. It inspects whether the user login or added profile.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\textwidth]{"Picture of Guard".png}
+{\caption*{Picture of Guard}}
+\end{figure}
+
+
+\null\qquad 	c)Service
+Service is a collection of working functions to communicate with back-end servers.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\textwidth]{"Picture of Service".png}
+{\caption*{Picture of Service}}
+\end{figure}
+This picture shows how we get the list of courses from DB. It uses RESTful API to get list. The logic of serialization into json type of data is implemented in back-end server. This only sends request and receives the response from server.\\
+When browser(user) sends request, server receives it and get data from DB and serialize the data into json and then it returns response to user. From that data, components render pages.
+
+
+\null\qquad 	d)Routing
+To route our modules interdependent, we use built in module from angular. To make hierarchy of URLs, we had to do like this.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\textwidth]{"Picutre of routing module".png}
+{\caption*{Picutre of routing module}}
+\end{figure}
+At first, it is routing module in courses component. It is reached by http://base\_url/pages/courses/. There is children array inside constant ‘routes’. there is a object which has path of ‘add’ and component of ‘CourseAddComponent’. To access that component, we can simply add ‘add/’ string to URL above. And there is another object which has path of ‘:id’. It also has component and children array. As it has another children array, it has another hierarchy dependently.
+
+
+\null\qquad 	e)Rendering
+Rendering works as user access the component and the component renders HTML file.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\textwidth]{"Picture of Rendering".png}
+{\caption*{Picture of Rendering}}
+\end{figure}
+This is an example of HTML file. There is special grammer which is called string concatenation. ‘assignment’ surrounded by braces is variable from component typescript.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\textwidth]{"Picture of Variable assignment".png}
+{\caption*{Picture of Variable assignment}}
+\end{figure}
+The variable ‘assignment’ is assigned in the typescript file. It receives data from server through functions implemented in the services such as ‘CourseService’.
+
+\subsubsection{Back-end Server Implementation}
+
+\null\qquad 	a)Auto-scaling
+AWS provides auto-scaling. We set if percentage of CPU usage is more than 50\%, AWS will automatically add 1 EC2 instance.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\textwidth]{"Picture of Cpu usage".png}
+{\caption*{Picture of Rendering}}
+\end{figure}
+If CPU utilization is more than 50\% for 60seconds, auto scaling group would add 1 instance and CPU utilization is less than 20\% for 60seconds, it will remove 1 instance.
+
+\null\qquad 	b)RDS
+Rendering works as user access the component and the component renders HTML file.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.3\textwidth]{"Picture of RDS".png}
+{\caption*{Picture of RDS}}
+\end{figure}
+AWS RDS is also used. In this service, we used MySQL5.6. It routes the Kronos EC2 server which fetches code from each student’s Github repository so that read the data from it.
+
+
+
+\null\qquad 	c)Encryption
+Those who don’t want to share their own assignment, we made encryption algorithm.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.35\textwidth]{"Code of Encryption".png}
+{\caption*{Code of Encryption}}
+\end{figure}
+Its algorithm is CBC, and we used AES of Crypto module for pseudo random function inside. As the user upload file and submit it, the key is stored and outputs the encrypted code. The user has to upload their encrypted code on their Github repository. Then the server will fetch the code from repository and with the key stored in database, it could be decrypted.
+
+\null\qquad 	d)Kronos
+To fetch data from Github repository, workers have to periodically and automatically get the job done. In Linux system, cron is a suitable option for this. Django Kronos registers the function in service to cron so that it works automatically.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\textwidth]{"Example of Kronos".png}
+{\caption*{Example of Kronos}}
+\end{figure}
+\null\qquad e)Rabbit MQ
+To make a queue for grading server, we used Rabbit MQ. This queue produces the entities to be tested and graded. Then worker consumes the entities and gives the work to grading server.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\textwidth]{"Code of Rabbit MQ".png}
+{\caption*{Code of Rabbit MQ}}
+\end{figure}
+
+\null\qquad f)	Compilebox
+In grading server, testing should be done. CompileBox is an open source module that compiles and tests the code. It is made by Nodejs and with Docker the code is deployed and tested.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\textwidth]{"Code of Compilebox".png}
+{\caption*{Code of Compilebox}}
+\end{figure}
+
+
+\subsubsection{Directory Organization of Angular Project}
+See the last page for detail
+
+\subsubsection{Directory Organization of Back-end Project}
+See the last page for detail
+\subsubsection{Courses Component}
+This component gets the list of courses and renders the list. Search function is included.\\\\
+\null\qquad 1)Course Component\\
+This component gets the detailed information of one course. Delete function is included.\\\\
+\null\qquad 2)	Add Component\\
+This component provides functions to add a course. Only professor can add a course.\\\\
+\null\qquad 3)	Edit Component\\
+This component provides functions to edit a course. Only professor who is the owner of the specific course can edit it.\\\\
+\null\qquad 4)Assignments Component\\
+This component is just a shell that contains its child components.\\\\
+\null\qquad a)	Assignment Component\\
+This component gets the detailed information of one assignment. Delete function is included.\\\\
+\null\qquad b)	Add Component\\
+This component provides functions to add a course. Only professor who is the owner of the specific course can add it.\\\\
+\null\qquad c)	Edit Component\\
+This component provides functions to edit a course. Only professor who is the owner of the specific course can edit it.\\\\
+
+\subsubsection{Profile Component}
+This component is a just shell to contain its child component.
+
+\null\qquad 1)	Add Component\\
+This component provides functions to add a course. Only those who not yet created profile can access this component.\\
+
+\null\qquad 2)	Edit Component\\
+This component provides functions to add a course. Only those who created profile can access this component.\\
+
+\subsubsection{Register Component}
+
+\subsubsection{Shared Services}
+
+\null\qquad 1)	Guard\\
+
+\null\qquad a)	Auth Guard\\
+If this guard is activated, user who doesn't login cannot use this service.\\
+
+\null\qquad b)	Profile Guard\\
+If this guard is activated, user who didn’t add their profile cannot use this service.\\
+\subsubsection{Account App}
+This app is to provide REST API to connect with DB. Through this app, user can add account and profile and edit the profile they created. It includes serializers and permission constraint to protect unintentional or malicious requests from activated.
+\subsubsection{Portal App}
+This app is to provide REST API to connect with DB. Through this app, professors can create, edit and delete courses and assignments. It also includes serializers and permission constraint to protect unintentional or malicious requests from activated.
+\subsubsection{Base App}
+This app is to run and manage server. This app is created automatically by Django-admin command.
+\subsubsection{UML}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\textwidth,height= 0.5\textheight]{"Overview of UML".png}
+{\caption*{Overview of UML}}
+\end{figure}
+
+
+\ifCLASSOPTIONcompsoc
+\IEEEraisesectionheading{\section{USE CASES}\label{sec:USE CASES}}
+\else
+\section{USE CASES}
+\label{sec:USE CASES}
+
+\subsection{Sign up and registration}
+\subsubsection{Use Case Diagram}
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.3\textwidth]{"Student Use Case".png}
+{\caption*{Student Use Case}}
+\end{figure}
+
+\fi
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.3\textwidth]{"Student Sign Up".png}
+{\caption*{Example of Student Sign up}}
+\end{figure}
+First thing users need to do is signing up. In thish page, both professors and students should input their ID, password and Hanyang e-mail account.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\textwidth]{"Student Sign Up2".png}
+{\caption*{Example of Student Sign up2}}
+\end{figure}
+Referring to figure above, when users enter not hanyang e-mail account but other e-mail accounts, our server rejects users to be signed up. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\textwidth]{"Student Sign In".png}
+{\caption*{Example of Student Sign In}}
+\end{figure}
+After users complete signing up, user information including username, email and password is added to database. The last step before logging in is for users to verify Hanyang email account.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\textwidth]{"Student Sign In Failure".png}
+{\caption*{When access is denied}}
+\end{figure}
+Just like the figure above, it is impossible to log in with unverified email account. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{"Student Add Profile".png}
+{\caption*{Example of how to add profile}}
+\end{figure}
+After logging in, the next page is for adding user profile. In this user profile page, user needs to fill out the form with professor/student identification, name, student number and github identification. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{"Github Search".png}
+{\caption*{Example of search in Github}}
+\end{figure}
+Users are also able to search for their github ID
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{"Add Profile 2".png}
+{\caption*{Login with Github button checked}}
+\end{figure}
+Click check button then github ID would be automatically registered on the user profile
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{"Search and Register Courses".png}
+{\caption*{Example of courses}}
+\end{figure}
+After filling out the profile, user can search courses and register them.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{"Search Engine Courses".png}
+{\caption*{Searching courses in search engine}}
+\end{figure}
+
+On the default screen, users can browse all the courses in the semester, searching engine at the top left help to filter courses by professor name or course title. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{"Course Information".png}
+{\caption*{Picture 22: Information of course example}}
+\end{figure}
+Detailed information of certain course is shown on the screen if a user selects one of those courses and click it. Course title, contents, professor name and semester info are included in course detail information. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\textwidth]{"Student Register Button".png}
+{\caption*{Example of register button}}
+\end{figure}
+In case of student users, they can find register button at the bottom right as shown in the figure above. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\textwidth]{"Register Button Github".png}
+{\caption*{PExample of Github register button}}
+\end{figure}
+ \setlength{\belowcaptionskip}{-10pt}
+
+
+If student users click on register button, they can register their own github repository and after saving it, they can register the courses they take. Professors need to verify for the final step of course registration. 
+
+
+\subsubsection{Student Assignment use case}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\textwidth]{"Student Assignment use case".png}
+{\caption*{Use case of Student Assignment}}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\textwidth]{"Assignment List".png}
+{\caption*{Example of assignment lists}}
+\end{figure}
+As the procedures for registration is over, new lists for assignments are created.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{"Check Information Assignment".png}
+{\caption*{Example of information checking  assignment}}
+\end{figure}
+Selecting a certain assignment, student user can check detailed information for the assignment. Detailed information may include title, content, deadline, allowed languages and file name if submitted. File uploader field exists for students who are reluctant to release their source codes on their github.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{"Assignment Encryption".png}
+{\caption*{Example of assignment encryption}}
+\end{figure}
+As the figure above, if the file is uploaded and student user click on encryption button, he or she can download it via url created through encryption. Then student user is required to upload it on github.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{"Assignment Grade".png}
+{\caption*{Example of assignment grading}}
+\end{figure}
+If assignment submission is completed through github, immediate grading button will be shown on the screen. Technically, our system checks the assignment every one hour but immediate grading button is for students who need prompt feedback and grade for their assignments.  
+
+\subsubsection {Professor}
+\null\qquad a)Use case diagram
+Professor Use Case
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{"Professor Use Case".png}
+{\caption*{Professor Use Case}}
+\end{figure}
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\textwidth]{"Add Profile Professor".png}
+{\caption*{Example of adding professor's profile}}
+\end{figure}
+For professor profile, he does not need to write student id or github repository. All he has to do is to check on is\_prof field and write his name.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\textwidth]{"Professor Create Course".png}
+{\caption*{Example of creating courses}}
+\end{figure}
+In case of professors, they can create courses they teach in course page. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\textwidth]{"Course Create Form".png}
+{\caption*{Example of course creation form}}
+\end{figure}
+If professors click on course creation button, certain form including title, year, semester and contentis created for course creation. Save button for course creation will be activated if required fields are input. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{"Course Delete".png}
+{\caption*{PExample of deleting course}}
+\end{figure}
+Any course will be deleted as professor user clicks on deletion button and confirm his action on confirm dialogue. Extra attention is required during course deletion because deletion of assignments submitted is all accompanied by course deletion.
+ 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{"Course Acceptance Button".png}
+\includegraphics[width=0.5\textwidth]{"Acceptance button Korean".png}
+{\caption*{Examples of acceptance button}}
+\end{figure}
+When the course is created by professor user and student user register for the course, acceptance button is created like above figure and according screen pops up. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\textwidth]{"Cource Creation required form".png}
+{\caption*{Example of coure creation form}}
+\end{figure}
+Just like course creation, professors are required to fill out the form for assignment creation, then save button will be activated. All entries are required fields excluding test input and test output. 
+
+\subsubsection{Professor Assignment Use case diagram}
+\begin{figure}[H]
+\centering
+\includegraphics[width=10cm,height=8cm,keepaspectratio]{"Professor Assignment use case".png}
+{\caption*{Use case of Professor Assignment}}
+\end{figure}
+
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{"Check Submission Status".png}
+{\caption*{Example of checking submission}}
+\end{figure}
+Student user can check submission status for all students taking the course if the course he or she is taking is registered in his or her profile. For more information, he or she can click check detail button.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{"Check Detail".png}
+{\caption*{Example of checking submission details}}
+\end{figure}
+In check detail field, if the student user’s code fail, it shows the reason of failure with the file name. Code is downloaded by clicking on file name. 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\textwidth]{"Assignment Amendment".png}
+{\caption*{Example of assignment amendment}}
+\end{figure}
+For assignment amendment, professor user should click on assignment correction button then fill out the required entry in the form. Saving button will be activated and correction is completed by hitting the button. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\textwidth]{"Downloading Assignment".png}
+{\caption*{Example of downloading Assignment}}
+\end{figure}
+When professors click on assignment downloading button, the button will be disabled immediately and codes student submitted will be downloaded in a zip file. Compression will be conducted in EC2 server and the server only sends the route of the file to front-end for download.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\textwidth]{"submission status student".png}
+{\caption*{Example of submission status}}
+\end{figure}
+Student user can check submission status for all students taking the course if the course he or she is taking is registered in his or her profile. For more information, he or she can click check detail button.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\textwidth]{"Check Detail student".png}
+{\caption*{Example of downloading Assignment}}
+\end{figure}
+
+In check detail field, if the student user’s code fail, it shows the reason of failure with the file name. Code is downloaded by clicking on file name.
+\bigskip
+\bigskip
+
+\ifCLASSOPTIONcompsoc
+\IEEEraisesectionheading{\section{SOFTWARE INSTALLATION GUIDE}\label{sec:SOFTWARE INSTALLATION GUIDE}}
+\else
+\section{SOFTWARE INSTALLATION GUIDE}
+\label{sec:SOFTWARE INSTALLATION GUIDE}
+\fi
+
+\subsection{How to Setup Servers}
+\subsubsection{API server}
+First of all, download the codes via our github, install the requirements using pip. Second, Set secret keys in settings directory. Third, Make Elastic beanstalk environment and Deploy application using eb-cli which is AWS official tools.
+\subsubsection{Django-Worker}
+First, download the codes via our github on server, install the requirements using pip. Second, Set secret keys in settings directory. Finally, Register tasks with cron written on django enviornment.
+\subsubsection{Rabbit-MQ server and Worker}
+First, download rabbit-mq server codes via apt-get on server, Second, download supervisord for worker management. Third, download the worker codes via our github. Finally, using supervisord, make worker as a daemon.
+\subsubsection{CompileBox}
+Download compilebox server codes via our github on server, and deploy node server as daemon using nohup command.
+\subsection{Supported Version of Librariess}
+\qquad 1)Ubuntu v14.04 LTS\\
+\null\qquad2)Docker v1.12.6\\
+\null\qquad3)Python v3.5\\
+\null\qquad4)Django v1.10.6 \& v1.11 LTS\\
+\null\qquad5)Django Rest Framework v3.6.2\\
+\null\qquad6)Django Kronous v1.0\\
+\null\qquad 7)Typescript v2.3\\
+\null\qquad 8)Angular v4.0\\ 
+\null\qquad9)Node v6.10.3 LTS\\
+\null\qquad10)Rabbit-MQ v3.6.8\\
+\null\qquad 11)MySQL v5.6.27\\\\
+\bigskip
+\bigskip
+
+\ifCLASSOPTIONcompsoc
+\IEEEraisesectionheading{\section{DIFFICULTIES}\label{DIFFICULTIES}}
+\else
+\section{DIFFICULTIES}
+\label{DIFFICULTIES}
+\fi
+Our team could successfully finish this project, but getting our feet wet to work long-term project, there were several difficulties. First of all, coming up with a new helpful idea or theme for the project was absolutely not easy. We had no idea what to do, how to do and whether we are doing in an efficient way. So, at the beginning of the project, we three members try to gather as much as possible for brain-storming. In the phase of brainstorming, it did not matter any of members had better software development skill. Every single member proposed what he feels uncomfortable in daily life and came up with new assignment submission system using git. Second, in the middle of software development, facing new software platform or skills like making encryption module and messaging queue was not easy. Since our team determined to focus on server distribution, it was critical to highlight auto-scaling. However, for some team members even the concept of auto-scaling was unfamiliar, so it took long time to implement the skill in back-end. For front-end as well, we tried to study angular 4 watching some video clips on Internet, but most of them only focus on theoretical perspective. Advanced skills like connecting it to our server was completely our job. Last but not least, communication problem was the most difficult part. As professor mentioned, the point of software engineering project is to learn communication and cooperation skill. All three members had different software development experience and skills. So what we should have done was to distribute our roles clearly and properly and take much time in discussion and teaching each other. After ideation phase, however, we all depended on remote communication method and it caused some miscommunications and distrust. But the bright side is that we all learned lesson that next time doing project with other members, the most important part is not a difference in development skill but a communication way and skill. 
+\subsection{Project Directory}
+
+\begin{figure}[p]
+\centering
+\includegraphics[width=0.9\textwidth]{"Table1".png}
+{\caption*{Directory Organization of Angular Project1}}
+\end{figure}
+\clearpage
+\bigskip
+\begin{figure}[p]
+\centering
+\includegraphics[width=0.9\textwidth]{"Table2".png}
+{\caption*{Directory Organization of Angular Project2}}
+\end{figure}
+\clearpage
+\begin{figure}[p]
+\centering
+\includegraphics[width=0.9\textwidth]{"Table3".png}
+{\caption*{Directory Organization of Angular Project3}}
+\end{figure}
+
+\clearpage
+\begin{figure}[p]
+\centering
+\includegraphics[width=0.9\textwidth]{"Table4".png}
+{\caption*{Directory Organization of Back-end Project}}
+\end{figure}
+
+
+
+% An example of a floating figure using the graphicx package.
+% Note that \label must occur AFTER (or within) \caption.
+% For figures, \caption should occur after the \includegraphics.
+% Note that IEEEtran v1.7 and later has special internal code that
+
+% is designed to preserve the operation of \label within \caption
+% even when the captionsoff option is in effect. However, because
+% of issues like this, it may be the safest practice to put all your
+% \label just after \caption rather than within \caption{}.
+%
+% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
+% option should be used if it is desired that the figures are to be
+% displayed while in draft mode.
+%
+%\begin{figure}[!t]
+%\centering
+%\includegraphics[width=2.5in]{myfigure}
+% where an .eps filename suffix will be assumed under latex, 
+% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+% via \DeclareGraphicsExtensions.
+%\caption{Simulation results for the network.}
+%\label{fig_sim}
+%\end{figure}
+
+% Note that the IEEE typically puts floats only at the top, even when this
+% results in a large percentage of a column being occupied by floats.
+% However, the Computer Society has been known to put floats at the bottom.
+
+
+% An example of a double column floating figure using two subfigures.
+% (The subfig.sty package must be loaded for this to work.)
+% The subfigure \label commands are set within each subfloat command,
+% and the \label for the overall figure must come after \caption.
+% \hfil is used as a separator to get equal spacing.
+% Watch out that the combined width of all the subfigures on a 
+% line do not exceed the text width or a line break will occur.
+%
+%\begin{figure*}[!t]
+%\centering
+%\subfloat[Case I]{\includegraphics[width=2.5in]{box}%
+%\label{fig_first_case}}
+%\hfil
+%\subfloat[Case II]{\includegraphics[width=2.5in]{box}%
+%\label{fig_second_case}}
+%\caption{Simulation results for the network.}
+%\label{fig_sim}
+%\end{figure*}
+%
+% Note that often IEEE papers with subfigures do not employ subfigure
+% captions (using the optional argument to \subfloat[]), but instead will
+% reference/describe all of them (a), (b), etc., within the main caption.
+% Be aware that for subfig.sty to generate the (a), (b), etc., subfigure
+% labels, the optional argument to \subfloat must be present. If a
+% subcaption is not desired, just leave its contents blank,
+% e.g., \subfloat[].
+
+
+% An example of a floating table. Note that, for IEEE style tables, the
+% \caption command should come BEFORE the table and, given that table
+% captions serve much like titles, are usually capitalized except for words
+% such as a, an, and, as, at, but, by, for, in, nor, of, on, or, the, to
+% and up, which are usually not capitalized unless they are the first or
+% last word of the caption. Table text will default to \footnotesize as
+% the IEEE normally uses this smaller font for tables.
+% The \label must come after \caption as always.
+%
+%\begin{table}[!t]
+%% increase table row spacing, adjust to taste
+%\renewcommand{\arraystretch}{1.3}
+% if using array.sty, it might be a good idea to tweak the value of
+% \extrarowheight as needed to properly center the text within the cells
+%\caption{An Example of a Table}
+%\label{table_example}
+%\centering
+%% Some packages, such as MDW tools, offer better commands for making tables
+%% than the plain LaTeX2e tabular which is used here.
+%\begin{tabular}{|c||c|}
+%\hline
+%One & Two\\
+%\hline
+%Three & Four\\
+%\hline
+%\end{tabular}
+%\end{table}
+
+
+% Note that the IEEE does not put floats in the very first column
+% - or typically anywhere on the first page for that matter. Also,
+% in-text middle ("here") positioning is typically not used, but it
+% is allowed and encouraged for Computer Society conferences (but
+% not Computer Society journals). Most IEEE journals/conferences use
+% top floats exclusively. 
+% Note that, LaTeX2e, unlike IEEE journals/conferences, places
+% footnotes above bottom floats. This can be corrected via the
+% \fnbelowfloat command of the stfloats package.
+
+
+
+
+
+
+
+% if have a single appendix:
+%\appendix[Proof of the Zonklar Equations]
+% or
+%\appendix  % for no appendix heading
+% do not use \section anymore after \appendix, only \section*
+% is possibly needed
+
+% use appendices with more than one appendix
+% then use \section to start each appendix
+% you must declare a \section before using any
+% \subsection or using \label (\appendices by itself
+% starts a section numbered zero.)
+%
+
+
+
+
+% you can choose not to have a title for an appendix
+% if you want by leaving the argument blank
+
+
+
+% trigger a \newpage just before the given reference
+% number - used to balance the columns on the last page
+% adjust value as needed - may need to be readjusted if
+% the document is modified later
+%\IEEEtriggeratref{8}
+% The "triggered" command can be changed if desired:
+%\IEEEtriggercmd{\enlargethispage{-5in}}
+
+% references section
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://mirror.ctan.org/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+%\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+%\bibliography{IEEEabrv,../bib/paper}
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+
+
+% biography section
+% 
+% If you have an EPS/PDF photo (graphicx package needed) extra braces are
+% needed around the contents of the optional argument to biography to prevent
+% the LaTeX parser from getting confused when it sees the complicated
+% \includegraphics command within an optional argument. (You could create
+% your own custom macro containing the \includegraphics command to make things
+% simpler here.)
+%\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{mshell}}]{Michael Shell}
+% or if you just want to reserve a space for a photo:
+
+
+% if you will not have a photo at all:
+
+% insert where needed to balance the two columns on the last page with
+% biographies
+%\newpage
+
+
+% You can push biographies down or up by placing
+% a \vfill before or after them. The appropriate
+% use of \vfill depends on what kind of text is
+% on the last page and whether or not the columns
+% are being equalized.
+
+%\vfill
+
+% Can be used to pull up biographies so that the bottom of the last one
+% is flush with the other column.
+%\enlargethispage{-5in}
+
+
+
+% that's all folks
+\end{document}
+
+
